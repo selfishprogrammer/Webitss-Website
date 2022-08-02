@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&family=Libre+Baskerville&display=swap');
+
+#title{
+font-size: 45;
+font-family: 'Libre Baskerville', serif;
+color:'white'
+
+}
+#bgImg{
+    width: 100%;
+    position: relative;
+    background:url('https://i.pinimg.com/originals/36/f0/94/36f0949c623b61a235fd6645fa507236.jpg') no-repeat right center;
+    padding-top:90px ;
+    padding-bottom:40px ;
+    background-size: cover;
+    border-radius: 0px 0px 0px 0px;
+  }
+
+
+  #home_btn{
+    color: white;
+    max-width: 65%;
+    height: 60px;
+    font-family: 'Domine', serif;
+    border: 2px solid white;
+    transition: transform .2s;
+    font-size: 20px;    
+}
+#home_btn:hover{
+    transform: scale(1.2);
+    background-color: transparent;
+}
+#myVideo {
+  width: 100vw;
+  height: 100vh;
+  object-fit: initial;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 1.5;
+}
+#steps{
+  transition: transform .2s;
+
+}
+#steps:hover{
+  transform: scale(1.2);
+  background-color: transparent;
+}
+#steps2{
+  transition: transform .2s;
+
+}
+#steps2:hover{
+  transform: scale(0.7);
+  background-color: transparent;
+}
