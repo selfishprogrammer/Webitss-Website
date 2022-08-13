@@ -15,7 +15,7 @@ export default function FooterScreen() {
               <div class="mx-2" style={{ fontSize: 25 }}>
                 <a
                   target="_blank"
-                  href="https://www.facebook.com/Code-geeks-102657365490343"
+                  href="https://www.instagram.com/webitss.in/"
                   class="nav-link"
                   style={{ color: "white" }}
                 >
@@ -25,33 +25,14 @@ export default function FooterScreen() {
               <div class="mx-2" style={{ fontSize: 25 }}>
                 <a
                   target="_blank"
-                  href="https://www.instagram.com/codegeeks.programmingofschool/"
+                  href="https://www.instagram.com/webitss.in/"
                   class="nav-link"
                   style={{ color: "white" }}
                 >
                   <i class="fa fa-instagram" aria-hidden="true"></i>
                 </a>
               </div>
-              <div class="mx-2" style={{ fontSize: 25 }}>
-                <a
-                  target="_blank"
-                  href="https://www.youtube.com/channel/UCeRMI1PN8R0HZUDDusHO5xQ"
-                  class="nav-link"
-                  style={{ color: "white" }}
-                >
-                  {" "}
-                  <i class="fa fa-youtube-play" aria-hidden="true"></i>
-                </a>
-              </div>
             </div>
-          </div>
-
-          <div className="d-flex justify-content-center  my-4">
-            <img
-              src="https://webitss.com/static/media/logo_webitss.4b5c4c13ae62557fe69d.png"
-              width="100"
-              height="100"
-            />
           </div>
         </div>
         <div className="container">
@@ -87,7 +68,7 @@ export default function FooterScreen() {
               </p>
               <p className="">
                 <Link
-                  to="/"
+                  to="/about"
                   className="my-1 text-center"
                   style={{
                     color: "black",
@@ -102,7 +83,7 @@ export default function FooterScreen() {
               </p>
               <p className="">
                 <Link
-                  to="/"
+                  to="/contact"
                   className="my-1 text-center"
                   style={{
                     color: "black",
@@ -112,36 +93,6 @@ export default function FooterScreen() {
                 >
                   <span style={{ color: "white", textDecoration: "underline" }}>
                     <b>CONTACT US</b>
-                  </span>
-                </Link>
-              </p>
-              <p className="">
-                <Link
-                  to="/"
-                  className="my-1 text-center"
-                  style={{
-                    color: "black",
-                    fontFamily: "serif",
-                    fontSize: 15,
-                  }}
-                >
-                  <span style={{ color: "white", textDecoration: "underline" }}>
-                    <b>TESTIMONIAL</b>
-                  </span>
-                </Link>
-              </p>
-              <p className="">
-                <Link
-                  to="/"
-                  className="my-1 text-center"
-                  style={{
-                    color: "black",
-                    fontFamily: "serif",
-                    fontSize: 15,
-                  }}
-                >
-                  <span style={{ color: "white", textDecoration: "underline" }}>
-                    <b>PORTFILIO</b>
                   </span>
                 </Link>
               </p>
@@ -235,21 +186,6 @@ export default function FooterScreen() {
                   </span>
                 </Link>
               </p>
-              <p className="">
-                <Link
-                  to="/"
-                  className="my-1 text-center"
-                  style={{
-                    color: "black",
-                    fontFamily: "serif",
-                    fontSize: 15,
-                  }}
-                >
-                  <span style={{ color: "white", textDecoration: "underline" }}>
-                    <b>LOGO DESIGN</b>
-                  </span>
-                </Link>
-              </p>
             </div>
             <div className="col-md-3">
               <Link
@@ -290,7 +226,6 @@ export default function FooterScreen() {
               <div className=" mt-4">
                 <h6>786712345</h6>
                 <h6>info@webitss.com</h6>
-                <h6>get@webitss.com</h6>
               </div>
             </div>{" "}
             {/* <div>
@@ -566,9 +501,9 @@ export default function FooterScreen() {
         <hr />
         <p class="mb-0 text-center">© 2021-2022 webitss.com</p>
         <p class="mb-0 text-center">
-          <a href="#">Back to top |</a>
-          <a href="#">Privacy |</a>
-          <a href="#">Terms</a>
+          <a href="/">Back to top |</a>
+          <a href="/privacy-policy">Privacy Policy|</a>
+          <a href="/tc">Terms&Conditions</a>
         </p>
 
         <p></p>

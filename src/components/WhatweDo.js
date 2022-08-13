@@ -1,72 +1,157 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
+
 export default function WhatweDo() {
-  const settings = {
+  const navigate = useNavigate();
+  var settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
+    speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
+    slidesToScroll: 4,
+    initialSlide: 0,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <div>
-      <h3
+      <div
         className="text-center my-3"
+        id="text"
         style={{
-          color: "black",
-          fontWeight: "bold",
-          fontFamily: "initial",
+          color: "blue",
+          // fontWeight: "bold",
+          fontFamily: "serif",
           marginBottom: 30,
+          fontSize: 30,
         }}
       >
-        Technology on which we work
-      </h3>
-      <div className="container my-4 p-5">
+        WHAT WE DO ?? WHAT WE CREATES ??
+      </div>
+      <div className="bg-whit mx-3 p-3 my-4">
         <Slider {...settings}>
-          <div
-            className="px-4"
-            id="steps"
-            style={{ cursor: "pointer", borderRadius: 20 }}
-          >
-            <img
-              src="https://www.mindinventory.com/blog/wp-content/uploads/2017/08/reactjs.jpg"
-              style={{ borderRadius: 20, width: "100%", height: 200 }}
-            />
+          <div className="px-4 pt-4">
+            <div className="shadow bg-white" id="steps2">
+              <img
+                src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX40828007.jpg"
+                width="100%"
+                height="300px"
+              />
+              <h4
+                class="py-3"
+                style={{
+                  fontFamily: "monospace",
+                  textAlign: "center",
+                  fontWeight: "bold",
+                }}
+              >
+                Web Development
+              </h4>
+              <p
+                class="text-center px-4 pt-2 pb-5"
+                style={{
+                  fontFamily: "monospace",
+                  textAlign: "center",
+                  // fontWeight: "bold",
+                }}
+              >
+                We Creates Static and Dynamics All Kinds Of Web Apps (Single
+                Pages Applications or Dynamics Page Applications) With SEO
+                Implementations in Very Low Costs Compare to Market Price.
+              </p>
+            </div>
           </div>
 
-          <div className="px-4" id="steps" style={{ cursor: "pointer" }}>
-            <img
-              src="https://www.filepicker.io/api/file/4C6yPDywSUeWYLyg1h9G"
-              style={{ borderRadius: 20, width: "100%", height: 200 }}
-            />
+          <div className="px-4 pt-4">
+            <div className="shadow bg-white" id="steps2">
+              <img
+                src="https://appinventiv.com/wp-content/uploads/sites/1/2019/10/7-Types-of-Applications-That-Can-be-Developed-Using-Python-1.webp"
+                width="100%"
+                height="300px"
+              />
+              <h4
+                class="py-3"
+                style={{
+                  fontFamily: "monospace",
+                  textAlign: "center",
+                  fontWeight: "bold",
+                }}
+              >
+                App Development
+              </h4>
+              <p
+                class="text-center px-4 pt-2 pb-5"
+                style={{
+                  fontFamily: "monospace",
+                  textAlign: "center",
+                  // fontWeight: "bold",
+                }}
+              >
+                We Creates Android and IOS Applications (Using React Native,
+                Flutter , Swift , Java Android) in Low Costs Compare to Market
+                Price.We Provide Lifetime Supports For Your App.
+              </p>
+            </div>
           </div>
-          <div className="px-4" id="steps" style={{ cursor: "pointer" }}>
-            <img
-              src="https://futureskillsprime.in//sites/default/files/2022-02/Link-Sharing_1200x630_Blockchain.jpg"
-              style={{ borderRadius: 20, width: "100%", height: 200 }}
-            />
-          </div>
-          <div className="px-4" id="steps" style={{ cursor: "pointer" }}>
-            <img
-              src="https://dz2cdn1.dzone.com/storage/temp/12434269-spring-framework-01.jpg"
-              style={{ borderRadius: 20, width: "100%", height: 200 }}
-            />
-          </div>
-          <div className="px-4" id="steps" style={{ cursor: "pointer" }}>
-            <img
-              src="https://www.filepicker.io/api/file/4C6yPDywSUeWYLyg1h9G"
-              style={{ borderRadius: 20, width: "100%", height: 200 }}
-            />
-          </div>
-          <div className="px-4" id="steps" style={{ cursor: "pointer" }}>
-            <img
-              src="https://media-exp1.licdn.com/dms/image/C5612AQGthZs00xPX2g/article-cover_image-shrink_720_1280/0/1634809398232?e=1658966400&v=beta&t=T05LwqHNyprbsNHuYlFA4gRqEn7aXkdAo1iI09yfKP8"
-              style={{ borderRadius: 20, width: "100%", height: 200 }}
-            />
+
+          <div className="px-4 pt-4">
+            <div className="shadow bg-white" id="steps2">
+              <img
+                src="https://magictym.com/Content/img/Services/sub-services/desktop-banner.jpg"
+                width="100%"
+                height="300px"
+              />
+              <h4
+                class="py-3"
+                style={{
+                  fontFamily: "monospace",
+                  textAlign: "center",
+                  fontWeight: "bold",
+                }}
+              >
+                Desktop Applications Development
+              </h4>
+              <p
+                class="text-center px-4 pt-1 pb-5"
+                style={{
+                  fontFamily: "monospace",
+                  textAlign: "center",
+                  // fontWeight: "bold",
+                }}
+              >
+                We Creates Desktop Applications (Using Java Swings and Python
+                Tkinter) in Low Costs Compare to Market Price.We Provide
+                Lifetime Supports For Your App.
+              </p>
+            </div>
           </div>
         </Slider>
       </div>

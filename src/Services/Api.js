@@ -21,6 +21,27 @@ export const postReq2 = (des_url, data) => {
       });
   });
 };
+
+export const postReq = (des_url, data) => {
+  let url = "http://localhost/webitss_backend/" + des_url;
+  console.log(url);
+  return new Promise((resolve, reject) => {
+    let headers = "Content-Type: application/json";
+
+    axios
+      .post(url, data, headers)
+      .then(function (response) {
+        resolve(response.data);
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        reject(error);
+      })
+      .finally(function () {
+        // always executed
+      });
+  });
+};
 export default class Api {
   // This a get request
   static get = async (url) => {

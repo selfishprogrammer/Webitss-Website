@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import FooterScreen from "../../components/FooterScreen";
 import Navbar from "../../components/Navbar";
@@ -7,17 +8,20 @@ export default function AboutPage() {
     <div>
       <Navbar />
       <h1
+        id="text"
         style={{
           textAlign: "center",
-          fontFamily: "monospace",
+          fontFamily: "serif",
+          color: "blue",
           marginTop: 15,
           marginBottom: 15,
         }}
       >
-        About Us
+        ABOUT US
       </h1>
       <div className="container">
         <p
+          id="text"
           style={{
             textAlign: "center",
             fontFamily: "monospace",
@@ -149,7 +153,6 @@ export default function AboutPage() {
                 style={{
                   fontFamily: "monospace",
                   textAlign: "center",
-                  // fontWeight: "bold",
                 }}
               >
                 Thanks From Webitss

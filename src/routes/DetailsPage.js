@@ -4,8 +4,12 @@ import React from "react";
 import FooterScreen from "../components/FooterScreen";
 import { Covido2, Covido4, covido5 } from "../components/Images";
 import Navbar from "../components/Navbar";
+import { useLocation } from "react-router";
 import "../routes/HomePage/home.css";
+import { base_url } from "../constants/Urls";
 export default function DetailsPage() {
+  const location = useLocation();
+  const { projects } = location.state;
   return (
     <div>
       <Navbar />
@@ -17,13 +21,18 @@ export default function DetailsPage() {
       >
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img className="d-block w-100" src={Covido4} alt="First slide" />
+            <img
+              className="d-block w-100"
+              src={`${base_url}Components/Uploads/${projects?.image_1}`}
+              alt="First slide"
+            />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100" src={Covido2} alt="Second slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={covido5} alt="Third slide" />
+            <img
+              className="d-block w-100"
+              src={`${base_url}Components/Uploads/${projects?.image_2}`}
+              alt="Second slide"
+            />
           </div>
         </div>
         <a
@@ -54,11 +63,11 @@ export default function DetailsPage() {
       <div style={{ textAlign: "center", fontSize: 23, fontFamily: "initial" }}>
         <b>Details Of Projects</b>
       </div>
-      <div className="container-fluid my-4">
+      <div className="container my-4">
         <div className="row">
-          <div className="col-md-4 my-2">
+          <div className="col-md-6 my-2">
             <div
-              className="shadow-lg p-3 "
+              className="shadow-lg bg-warning p-3 "
               id="steps2"
               style={{ borderRadius: 20, width: "100%", minHeight: 290 }}
             >
@@ -80,22 +89,13 @@ export default function DetailsPage() {
                   fontWeight: "initial",
                 }}
               >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
+                {projects?.details}
               </div>
             </div>
           </div>
-          <div className="col-md-4 my-2">
+          <div className="col-md-6 my-2">
             <div
-              className="shadow-lg p-3"
+              className="shadow-lg bg-warning p-3"
               id="steps2"
               style={{ borderRadius: 20, width: "100%" }}
             >
@@ -120,7 +120,7 @@ export default function DetailsPage() {
                       textAlign: "start",
                     }}
                   >
-                    Website
+                    {projects?.categories}
                   </div>
                 </div>
                 <div className="">
@@ -134,7 +134,7 @@ export default function DetailsPage() {
                       textAlign: "end",
                     }}
                   >
-                    Covido
+                    {projects?.name}
                   </div>
                 </div>
               </div>
@@ -150,7 +150,7 @@ export default function DetailsPage() {
                       fontWeight: "bold",
                     }}
                   >
-                    Goverment Of India
+                    {projects?.client}
                   </div>
                 </div>
                 <div className="">
@@ -180,7 +180,7 @@ export default function DetailsPage() {
                       fontWeight: "bold",
                     }}
                   >
-                    RK Roshan
+                    {projects?.client}
                   </div>
                 </div>
                 <div className="">
@@ -194,7 +194,7 @@ export default function DetailsPage() {
                       textAlign: "end",
                     }}
                   >
-                    Team Webitss (Rahul Jha and Team)
+                    {projects?.developer}
                   </div>
                 </div>
               </div>
@@ -211,7 +211,7 @@ export default function DetailsPage() {
                       fontWeight: "bold",
                     }}
                   >
-                    4.5/5
+                    {projects?.rating}/5
                   </div>
                 </div>
                 <div className="">
@@ -229,63 +229,6 @@ export default function DetailsPage() {
                   </div>
                 </div>
               </div>
-              <div
-                style={{
-                  fontFamily: "monospace",
-                  fontWeight: "normal",
-                  textAlign: "center",
-                  fontSize: 18,
-                }}
-              >
-                COSTS
-              </div>
-              <div
-                style={{
-                  fontFamily: "monospace",
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  fontSize: 20,
-                }}
-              >
-                $1500
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4 my-2">
-            <div
-              className="shadow-lg p-3 "
-              id="steps2"
-              style={{ borderRadius: 20, width: "100%", minHeight: 290 }}
-            >
-              <div
-                style={{
-                  fontSize: 20,
-                  fontFamily: "monospace",
-                  fontWeight: "bold",
-                  textAlign: "center",
-                }}
-              >
-                Details Of Projects/Technology We Used
-              </div>
-              <div
-                className="my-1 p-4"
-                style={{
-                  fontFamily: "monospace",
-                  fontSize: 18,
-                  fontWeight: "initial",
-                }}
-              >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
-              </div>
             </div>
           </div>
         </div>
@@ -295,7 +238,7 @@ export default function DetailsPage() {
           <div className="col-md-6">
             <div className="shadow-lg bg-white" id="steps2">
               <img
-                src="https://cdn.mos.cms.futurecdn.net/xY8C5oXg6dCknTCKDfCfTi-1200-80.jpg"
+                src={`${base_url}Components/Uploads/${projects?.image_4}`}
                 width="100%"
                 height="300px"
               />
@@ -317,16 +260,14 @@ export default function DetailsPage() {
                   // fontWeight: "bold",
                 }}
               >
-                We Are Here To Provide Websites Mobile Applications To New
-                Startups in Low Rates And In Limited Time With Free External
-                Support.
+                {projects?.client_review}
               </p>
             </div>
           </div>
           <div className="col-md-6">
             <div className="shadow-lg bg-white" id="steps2">
               <img
-                src="https://www.clipartkey.com/mpngs/m/25-258664_conference-clipart-company-meeting-online-on-demand-home.png"
+                src={`${base_url}Components/Uploads/${projects?.image_3}`}
                 width="100%"
                 height="300px"
               />
@@ -348,9 +289,7 @@ export default function DetailsPage() {
                   // fontWeight: "bold",
                 }}
               >
-                We Are Here To Provide Websites Mobile Applications To New
-                Startups in Low Rates And In Limited Time With Free External
-                Support.
+                {projects?.developer_review}
               </p>
             </div>
           </div>

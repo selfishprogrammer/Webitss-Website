@@ -7,11 +7,20 @@ import { setLogin, setUserData } from "./Redux/user";
 import RegisterPage from "./RegisterPage/RegisterPage";
 import ResetPasswordPage from "./ResetPassword.js/ResetPasswordPage";
 import AboutPage from "./routes/AboutPage/AboutPage";
+import AdminPage from "./routes/AdminPage/AdminPage";
+import TotalDemoProjects from "./routes/AdminPage/TotalDemoProjects";
+import TotalOrders from "./routes/AdminPage/TotalOrders";
+import TotalQueries from "./routes/AdminPage/TotalQueries";
+import TotalUsers from "./routes/AdminPage/TotalUsers";
 import Contactus from "./routes/Contactus/Contactus";
 import DetailsPage from "./routes/DetailsPage";
 import HomePage from "./routes/HomePage/HomePage";
 import LoginPage from "./routes/LoginPage/LoginPage";
+import OrderProjects from "./routes/OrderProjects/OrderProjects";
 import OtpPage from "./routes/OtpPage/OtpPage";
+import ProfilePageCheck from "./routes/ProfilePage.js/ProfilePageCheck";
+import PrivacyPolicies from "./routes/TermsAndConditions/PrivacyPolicies";
+import TermsAndConditions from "./routes/TermsAndConditions/TermsAndConditions";
 import Auth from "./Services/Auth";
 
 export default function App() {
@@ -43,6 +52,10 @@ export default function App() {
         <Route path="/resetPassword" element={<ResetPasswordPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/otp" element={<OtpPage />} />
+        <Route path="/contact" element={<Contactus />} />
+        <Route path="/order" element={<OrderProjects />} />
+        <Route path="/profile" element={<ProfilePageCheck />} />
+        <Route path="/details" element={<DetailsPage />} />
       </Routes>
     );
   };
@@ -54,6 +67,15 @@ export default function App() {
         <Route path="/details" element={<DetailsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<Contactus />} />
+        <Route path="/order" element={<OrderProjects />} />
+        <Route path="/tc" element={<TermsAndConditions />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicies />} />
+        <Route path="/profile" element={<ProfilePageCheck />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/totalUsers" element={<TotalUsers />} />
+        <Route path="/totalOrders" element={<TotalOrders />} />
+        <Route path="/totalQueries" element={<TotalQueries />} />
+        <Route path="/totalDemoProject" element={<TotalDemoProjects />} />
       </Routes>
     );
   };

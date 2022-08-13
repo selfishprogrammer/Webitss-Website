@@ -40,7 +40,7 @@ export default function OtpPage() {
         dispatch(setUserData(userInfo));
         navigate("/");
       } else if (from === "forgotPassword") {
-        navigate("/ResetPassword", {
+        navigate("/resetPassword", {
           state: {
             email: userInfo.email,
           },

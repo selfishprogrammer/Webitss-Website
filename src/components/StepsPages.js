@@ -4,23 +4,28 @@ import "../routes/HomePage/home.css";
 export default function StepsPages() {
   return (
     <div style={{ backgroundColor: "#fff" }}>
-      <div className="container" style={{ marginTop: 50, marginBottom: 50 }}>
-        <h3
+      <div
+        className="container-fluid"
+        style={{ marginTop: 50, marginBottom: 50 }}
+      >
+        <div
           className="text-center"
+          id="text"
           style={{
-            color: "black",
-            fontWeight: "bold",
-            fontFamily: "monospace",
+            color: "blue",
+            // fontWeight: "bold",
+            fontFamily: "serif",
             marginBottom: 30,
+            fontSize: 30,
           }}
         >
-          Steps to get you Project
-        </h3>
+          STEPS TO GET YOUR PROJECTS
+        </div>
 
         <div className=" row">
           <div className="col-md-3">
             <div
-              className="shadow-lg bg-white p-4 my-4"
+              className="shadow bg-white p-4 my-4"
               id="steps"
               style={{ borderRadius: 20, cursor: "pointer" }}
             >
@@ -33,7 +38,7 @@ export default function StepsPages() {
               </div>
               <div className="d-flex justify-content-center my-3">
                 <div
-                  className="shadow-lg rounded-circle p-2"
+                  className="shadow-lg bg-primary rounded-circle p-2"
                   style={{
                     //   borderRadius: 40,
                     backgroundColor: "rgb(83, 185, 210)",
@@ -46,7 +51,7 @@ export default function StepsPages() {
                     style={{
                       color: "white",
                       fontWeight: "bold",
-                      fontFamily: "monospace",
+                      fontFamily: "serif",
                     }}
                   >
                     1
@@ -58,7 +63,7 @@ export default function StepsPages() {
                 style={{
                   color: "black",
                   fontWeight: "bold",
-                  fontFamily: "monospace",
+                  fontFamily: "serif",
                 }}
               >
                 Register with us
@@ -67,17 +72,17 @@ export default function StepsPages() {
                 className="text-center"
                 style={{
                   color: "black",
-                  fontWeight: "bold",
-                  fontFamily: "monospace",
+                  // fontWeight: "bold",
+                  fontFamily: "serif",
                 }}
               >
-                Register Yourself And Add Your information About Yourself
+                Register yourself and add your information about yourself.
               </p>
             </div>
           </div>
           <div className="col-md-3">
             <div
-              className="shadow-lg bg-white p-4 my-4"
+              className="shadow bg-white p-4 my-4"
               id="steps"
               style={{ borderRadius: 20, cursor: "pointer" }}
             >
@@ -90,7 +95,7 @@ export default function StepsPages() {
               </div>
               <div className="d-flex justify-content-center mt-3 mb-2">
                 <div
-                  className="shadow-lg rounded-circle py-2"
+                  className="shadow-lg bg-warning rounded-circle py-2"
                   style={{
                     //   borderRadius: 40,
                     backgroundColor: "rgb(83, 185, 210)",
@@ -103,7 +108,7 @@ export default function StepsPages() {
                     style={{
                       color: "white",
                       fontWeight: "bold",
-                      fontFamily: "monospace",
+                      fontFamily: "serif",
                     }}
                   >
                     2
@@ -115,26 +120,27 @@ export default function StepsPages() {
                 style={{
                   color: "black",
                   fontWeight: "bold",
-                  fontFamily: "monospace",
+                  fontFamily: "serif",
                 }}
               >
                 Connect with developers
               </h3>
               <p
-                className="text-center"
+                className="text-center pt-2"
                 style={{
                   color: "black",
-                  fontWeight: "bold",
-                  fontFamily: "monospace",
+                  // fontWeight: "bold",
+                  fontFamily: "serif",
                 }}
               >
-                Connect with developers to express your project.
+                Connect with developers to give idea of your projects and all
+                other requirements that you have.
               </p>
             </div>
           </div>
           <div className="col-md-3">
             <div
-              className="shadow-lg bg-white p-4 my-4"
+              className="shadow bg-white p-4 my-4"
               id="steps"
               style={{ borderRadius: 20, cursor: "pointer" }}
             >
@@ -147,7 +153,7 @@ export default function StepsPages() {
               </div>
               <div className="d-flex justify-content-center mt-3 mb-3">
                 <div
-                  className="shadow-lg rounded-circle py-2"
+                  className="shadow-lg bg-danger rounded-circle py-2"
                   style={{
                     //   borderRadius: 40,
                     backgroundColor: "rgb(83, 185, 210)",
@@ -160,7 +166,7 @@ export default function StepsPages() {
                     style={{
                       color: "white",
                       fontWeight: "bold",
-                      fontFamily: "monospace",
+                      fontFamily: "serif",
                     }}
                   >
                     3
@@ -172,27 +178,27 @@ export default function StepsPages() {
                 style={{
                   color: "black",
                   fontWeight: "bold",
-                  fontFamily: "monospace",
+                  fontFamily: "serif",
                 }}
               >
-                Work Started
+                Work started
               </h3>
               <p
                 className="text-center"
                 style={{
                   color: "black",
-                  fontWeight: "bold",
-                  fontFamily: "monospace",
+                  // fontWeight: "bold",
+                  fontFamily: "serif",
                 }}
               >
-                Our Developers Will Work On Your Project and Will Remain in
-                Contact With You.
+                Our developers will work on your project and will remain in
+                contact with you.
               </p>
             </div>
           </div>
           <div className="col-md-3">
             <div
-              className="shadow-lg bg-white p-4 my-4"
+              className="shadow bg-white p-4 my-4"
               id="steps"
               style={{ borderRadius: 20, cursor: "pointer" }}
             >
@@ -205,7 +211,7 @@ export default function StepsPages() {
               </div>
               <div className="d-flex justify-content-center mt-3 mb-3">
                 <div
-                  className="shadow-lg rounded-circle py-2"
+                  className="shadow-lg bg-success rounded-circle py-2"
                   style={{
                     //   borderRadius: 40,
                     backgroundColor: "rgb(83, 185, 210)",
@@ -218,7 +224,7 @@ export default function StepsPages() {
                     style={{
                       color: "white",
                       fontWeight: "bold",
-                      fontFamily: "monospace",
+                      fontFamily: "serif",
                     }}
                   >
                     4
@@ -230,7 +236,7 @@ export default function StepsPages() {
                 style={{
                   color: "black",
                   fontWeight: "bold",
-                  fontFamily: "monospace",
+                  fontFamily: "serif",
                 }}
               >
                 Delivered
@@ -239,12 +245,12 @@ export default function StepsPages() {
                 className="text-center"
                 style={{
                   color: "black",
-                  fontWeight: "bold",
-                  fontFamily: "monospace",
+                  // fontWeight: "bold",
+                  fontFamily: "serif",
                 }}
               >
-                In Last Step We Will Deliver This To You.. and will always will
-                be there to help you.
+                In last step we will deliver this to you.. and will always will
+                be there to help you if any issue arrives.
               </p>
             </div>
           </div>

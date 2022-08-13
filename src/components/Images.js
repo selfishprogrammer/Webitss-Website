@@ -10,6 +10,12 @@ import ecom from "../assets/Images/ecom.png";
 import ecom2 from "../assets/Images/ecom2.png";
 
 import ecom3 from "../assets/Images/ecom3.png";
+import erp from "../assets/Images/erp.png";
+import insta from "../assets/Images/insta.png";
+import homiez from "../assets/Images/homiez.png";
+
+import homiezWeb4 from "../assets/Images/homiezWeb4.png";
+
 export {
   logo,
   home,
@@ -21,4 +27,8 @@ export {
   ecom,
   ecom2,
   ecom3,
+  erp,
+  insta,
+  homiez,
+  homiezWeb4,
 };

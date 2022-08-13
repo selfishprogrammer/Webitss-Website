@@ -4,15 +4,17 @@ import ExploreIcon from "@mui/icons-material/Explore";
 import HomeIcon from "@mui/icons-material/Home";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import MessageRoundedIcon from "@mui/icons-material/MessageRounded";
-import CircleNotificationsRoundedIcon from "@mui/icons-material/CircleNotificationsRounded";
+import InfoIcon from "@mui/icons-material/Info";
 import { Link } from "react-router-dom";
-import { logo } from "./Images";
 import { useDispatch, useSelector } from "react-redux";
 import { setLogin, setUserData } from "../Redux/user";
 import Auth from "../Services/Auth";
+import { useNavigate } from "react-router";
+import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 export default function Navbar() {
   const { isLogin } = useSelector((state) => state.user);
   console.log("isLogin", isLogin);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const logout = () => {
     dispatch(setLogin(false));
@@ -20,6 +22,7 @@ export default function Navbar() {
     Auth.setUser(null);
     Auth.setUserEmail(null);
     Auth.setUserSecret(null);
+    navigate("/login");
   };
   return (
     <>
@@ -54,8 +57,15 @@ export default function Navbar() {
 
           <div className="nav-link ml-auto d-flex justify-content-between">
             <div className="nav-item ">
-              <Link className="nav-link" style={{ color: "black" }} to="/">
-                <HomeIcon />{" "}
+              <Link
+                className="nav-link"
+                style={{ color: "black" }}
+                data-toggle="tooltip"
+                to="/"
+                data-placement="bottom"
+                title="Home"
+              >
+                <HomeIcon />
               </Link>
             </div>
             <div className="nav-item">
@@ -63,20 +73,49 @@ export default function Navbar() {
                 className="nav-link"
                 style={{ color: "black" }}
                 to="/contact"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Contact"
               >
                 <MessageRoundedIcon />
               </Link>
             </div>
 
             <div className="nav-item">
-              <Link className="nav-link" style={{ color: "black" }} to="">
+              <Link
+                className="nav-link"
+                style={{ color: "black" }}
+                to="/order"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Order Project"
+              >
                 <AddCircleIcon data-toggle="modal" data-target="#add_post" />
               </Link>
             </div>
 
             <div className="nav-item">
-              <Link className="nav-link" style={{ color: "black" }} to="/about">
-                <ExploreIcon />
+              <Link
+                className="nav-link"
+                style={{ color: "black" }}
+                to="/about"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="About us"
+              >
+                <InfoIcon />
+              </Link>
+            </div>
+            <div className="nav-item">
+              <Link
+                className="nav-link"
+                style={{ color: "black" }}
+                to="/profile"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Order Project"
+              >
+                <WorkHistoryIcon data-toggle="modal" data-target="#add_post" />
               </Link>
             </div>
             {isLogin ? (
@@ -89,6 +128,9 @@ export default function Navbar() {
                     borderWidth: 0,
                     backgroundColor: "#fff",
                   }}
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Logout"
                 >
                   <AccountCircleOutlinedIcon />
                 </button>
@@ -99,17 +141,14 @@ export default function Navbar() {
                   className="nav-link"
                   style={{ color: "black" }}
                   to="/login"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Register/Login"
                 >
                   <AccountCircleOutlinedIcon />
                 </Link>
               </div>
             )}
-
-            <div className="nav-item ">
-              <Link className="nav-link" style={{ color: "black" }} to="#">
-                <CircleNotificationsRoundedIcon />{" "}
-              </Link>
-            </div>
           </div>
         </nav>
       </div>

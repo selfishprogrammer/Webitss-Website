@@ -68,8 +68,6 @@ export default function LoginPage() {
           const user = await Auth.getUser();
           if (user.categories === "admin") {
             navigate("/admin");
-          } else if (user.categories === "owner") {
-            navigate("/owner");
           } else {
             navigate("/");
           }
