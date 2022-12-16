@@ -1,4 +1,4 @@
-import logo from "../assets/Images/logo.jpeg";
+// import logo from "../assets/Images/logo.jpeg";
 import home from "../assets/Images/home.jpg";
 import Covido from "../assets/Images/Covido.png";
 import Covido2 from "../assets/Images/Covido2.png";
@@ -15,9 +15,9 @@ import insta from "../assets/Images/insta.png";
 import homiez from "../assets/Images/homiez.png";
 
 import homiezWeb4 from "../assets/Images/homiezWeb4.png";
+import logo from "../assets/Images/logo.png";
 
 export {
-  logo,
   home,
   Covido,
   Covido2,
@@ -31,4 +31,5 @@ export {
   insta,
   homiez,
   homiezWeb4,
+  logo,
 };

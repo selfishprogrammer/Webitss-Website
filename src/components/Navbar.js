@@ -11,6 +11,7 @@ import { setLogin, setUserData } from "../Redux/user";
 import Auth from "../Services/Auth";
 import { useNavigate } from "react-router";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
+import { logo } from "./Images";
 export default function Navbar() {
   const { isLogin } = useSelector((state) => state.user);
   console.log("isLogin", isLogin);
@@ -30,7 +31,7 @@ export default function Navbar() {
         <nav className=" navbar navbar-expand-lg navbar-light bg-white shadow-sm">
           <Link className="navbar-brand d-flex align-middle" to="/">
             <img
-              src="https://webitss.com/static/media/logo_webitss.4b5c4c13ae62557fe69d.png"
+              src={logo}
               height="50"
               width="50"
               className="rounded-circle"
@@ -40,7 +41,7 @@ export default function Navbar() {
             <span
               className=" pt-2 pl-2"
               style={{
-                fontFamily: "cursive",
+                fontFamily: "sans-serif",
                 fontSize: 20,
                 color: "blue",
                 msAlignSelf: "center",
@@ -48,8 +49,19 @@ export default function Navbar() {
                 flexDirection: "row",
               }}
             >
-              <b>WEBITSS</b>
+              <b>WEBITISS</b>
             </span>
+            <small
+              style={{
+                marginTop: 16,
+                marginLeft: 5,
+                fontFamily: "sans-serif",
+                fontSize: 10,
+                color: "blue",
+              }}
+            >
+              IT SOLUTIONS
+            </small>
           </Link>
           {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>

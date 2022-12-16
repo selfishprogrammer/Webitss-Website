@@ -66,7 +66,7 @@ export default function ForgotPasswoedPage() {
             <div className="d-flex justify-content-center p-4">
               <Link to="/">
                 <img
-                  src="https://webitss.com/static/media/logo_webitss.4b5c4c13ae62557fe69d.png"
+                  src={logo}
                   style={{
                     width: 80,
                     height: 80,

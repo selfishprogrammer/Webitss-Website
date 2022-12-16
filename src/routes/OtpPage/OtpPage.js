@@ -51,8 +51,8 @@ export default function OtpPage() {
     }
   };
   const renderButton = () => {
-    if (sendButton) {
-      return (
+    return (
+      <>
         <button
           className="btn btn-outline-success form-control"
           onClick={() => {
@@ -69,11 +69,10 @@ export default function OtpPage() {
             Submit OTP
           </span>
         </button>
-      );
-    } else {
-      return (
+
         <button
-          className="btn btn-outline-secondary form-control"
+          className="btn btn-outline-secondary form-control my-4"
+          disabled={sendButton}
           onClick={() => {
             resendOtp();
           }}
@@ -88,8 +87,8 @@ export default function OtpPage() {
             Resend OTP
           </span>
         </button>
-      );
-    }
+      </>
+    );
   };
   return (
     <div>
@@ -97,7 +96,7 @@ export default function OtpPage() {
         <div className="container">
           <div className="col-md-6 offset-md-3">
             <div
-              className="shadow-lg bg-white border"
+              className="shadow bg-white"
               style={{ borderRadius: 10, marginTop: 300, opacity: 1 }}
             >
               <div
@@ -109,7 +108,7 @@ export default function OtpPage() {
                   fontSize: 20,
                 }}
               >
-                Homeiz
+                Webitss
               </div>
               <div className="m-3">
                 <p style={{ fontSize: 17, fontFamily: "math" }}>
@@ -133,11 +132,8 @@ export default function OtpPage() {
                   This confirmation code is only valid for 5 minutes. If you did
                   not request for this code, please contact{" "}
                   <span>
-                    <a
-                      style={{ color: "red" }}
-                      href="mailto:rahuljha3246@gmail.com"
-                    >
-                      {location.state?.userInfo?.email}
+                    <a style={{ color: "red" }} href="mailto:info@webitss.com">
+                      info@webitss.com
                     </a>
                   </span>
                   .
