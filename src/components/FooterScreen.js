@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // import logo from "../../assets/Images/logo_webitss.png";
@@ -32,12 +33,23 @@ export default function FooterScreen() {
                   <i class="fa fa-instagram" aria-hidden="true"></i>
                 </a>
               </div>
+              <div class="mx-2" style={{ fontSize: 25 }}>
+                <a
+                  href="https://wa.me/<9339242724>"
+                  target="_blank"
+                  class="nav-link"
+                  style={{ color: "white" }}
+                >
+                  <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-        <div className="container">
+        <div class="col-md-4 offset-md-4">
+          {" "}
           <div className="row my-4">
-            <div className="col-md-3">
+            <div className="col-md-4">
               <Link
                 className="text-center mb-4"
                 to="#"
@@ -97,97 +109,7 @@ export default function FooterScreen() {
                 </Link>
               </p>
             </div>
-            <div className="col-md-3">
-              <Link
-                className="text-center mb-4"
-                to="#"
-                style={{
-                  color: "black",
-                  fontFamily: "serif",
-                  fontSize: 18,
-                }}
-              >
-                <span style={{ color: "grey" }}>
-                  <b>SERVICES</b>
-                </span>
-              </Link>
-              <p className=" mt-4">
-                <Link
-                  to="/"
-                  className="my-1 text-center"
-                  style={{
-                    color: "black",
-                    fontFamily: "serif",
-                    fontSize: 15,
-                  }}
-                >
-                  <span style={{ color: "white", textDecoration: "underline" }}>
-                    <b>WEB DESIGN</b>
-                  </span>
-                </Link>
-              </p>
-              <p className="">
-                <Link
-                  to="/"
-                  className="my-1 text-center"
-                  style={{
-                    color: "black",
-                    fontFamily: "serif",
-                    fontSize: 15,
-                  }}
-                >
-                  <span style={{ color: "white", textDecoration: "underline" }}>
-                    <b>WEB DEVELOPMENT</b>
-                  </span>
-                </Link>
-              </p>
-              <p className="">
-                <Link
-                  to="/"
-                  className="my-1 text-center"
-                  style={{
-                    color: "black",
-                    fontFamily: "serif",
-                    fontSize: 15,
-                  }}
-                >
-                  <span style={{ color: "white", textDecoration: "underline" }}>
-                    <b>APP DEVELOPMENT</b>
-                  </span>
-                </Link>
-              </p>
-              <p className="">
-                <Link
-                  to="/"
-                  className="my-1 text-center"
-                  style={{
-                    color: "black",
-                    fontFamily: "serif",
-                    fontSize: 15,
-                  }}
-                >
-                  <span style={{ color: "white", textDecoration: "underline" }}>
-                    <b>DEKSTOP APPLICATION</b>
-                  </span>
-                </Link>
-              </p>
-              <p className="">
-                <Link
-                  to="/"
-                  className="my-1 text-center"
-                  style={{
-                    color: "black",
-                    fontFamily: "serif",
-                    fontSize: 15,
-                  }}
-                >
-                  <span style={{ color: "white", textDecoration: "underline" }}>
-                    <b>HOSTING</b>
-                  </span>
-                </Link>
-              </p>
-            </div>
-            <div className="col-md-3">
+            <div className="col-md-4">
               <Link
                 className="text-center mb-4"
                 to="#"
@@ -209,7 +131,7 @@ export default function FooterScreen() {
                 <h6>KOLKATA , WEST BENGAL</h6>
               </div>
             </div>{" "}
-            <div className="col-md-3">
+            <div className="col-md-4">
               <Link
                 className="text-center mb-4"
                 to="#"
@@ -224,7 +146,7 @@ export default function FooterScreen() {
                 </span>
               </Link>
               <div className=" mt-4">
-                <h6>786712345</h6>
+                <h6>9339242724</h6>
                 <h6>info@webitss.com</h6>
               </div>
             </div>{" "}

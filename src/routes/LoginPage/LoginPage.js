@@ -8,6 +8,7 @@ import Auth from "../../Services/Auth";
 import { setLogin, setUserData } from "../../Redux/user";
 import ErrorToast from "../../components/ErrorToast";
 import ErrorText from "../../components/ErrorText";
+import { logo } from "../../components/Images";
 
 export default function LoginPage() {
   const dispatch = useDispatch();
@@ -115,7 +116,7 @@ export default function LoginPage() {
         >
           <div className=" d-flex justify-content-center">
             <img
-              src="https://webitss.com/static/media/logo_webitss.4b5c4c13ae62557fe69d.png"
+              src={logo}
               height="80"
               width="80"
               className="rounded-circle mb-3"

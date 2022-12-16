@@ -7,6 +7,7 @@ import Auth from "../../Services/Auth";
 import ErrorToast from "../../components/ErrorToast";
 import Services from "../../Services/Service";
 import SuccessModal from "../../components/SuccessModal";
+import LoginModal from "../../components/LoginModal";
 
 export default function OrderProjects() {
   const [order, setorder] = useState("");
@@ -24,6 +25,8 @@ export default function OrderProjects() {
   const [order_detailsHasError, setorder_detailsHasError] = useState("");
   const [orderType, setorderType] = useState([]);
   const [isVisible, setisVisible] = useState(false);
+  const [LoginVisible, setLoginVisible] = useState(false);
+
   const { isLogin } = useSelector((state) => state.user);
   const navigate = useNavigate();
   useEffect(() => {
@@ -37,7 +40,7 @@ export default function OrderProjects() {
     setphone(data?.phone);
     if (!data) {
       console.log("isLogin", isLogin);
-      navigate("/login");
+      setLoginVisible(true);
     }
   };
   const websitesType = [
@@ -141,6 +144,10 @@ export default function OrderProjects() {
     <div>
       <Navbar />
       <div className="container">
+        <LoginModal
+          IsVisible={LoginVisible}
+          close={() => setLoginVisible(false)}
+        />
         <h1
           id="text"
           style={{

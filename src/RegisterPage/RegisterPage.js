@@ -9,6 +9,7 @@ import "../RegisterPage/register.css";
 import Auth from "../Services/Auth";
 import Services from "../Services/Service";
 import { useNavigate } from "react-router";
+import { logo } from "../components/Images";
 export default function RegisterPage() {
   const [name, setname] = useState("");
   const [nameHasError, setnameHasError] = useState("");
@@ -121,7 +122,7 @@ export default function RegisterPage() {
         >
           <div className=" d-flex justify-content-center">
             <img
-              src="https://webitss.com/static/media/logo_webitss.4b5c4c13ae62557fe69d.png"
+              src={logo}
               height="80"
               width="80"
               className="rounded-circle mb-3"

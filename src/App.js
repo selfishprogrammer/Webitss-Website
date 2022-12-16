@@ -56,6 +56,8 @@ export default function App() {
         <Route path="/order" element={<OrderProjects />} />
         <Route path="/profile" element={<ProfilePageCheck />} />
         <Route path="/details" element={<DetailsPage />} />
+        <Route path="/tc" element={<TermsAndConditions />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicies />} />
       </Routes>
     );
   };

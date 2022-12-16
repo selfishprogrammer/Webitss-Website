@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router";
 import ErrorToast from "../components/ErrorToast";
 import ErrorText from "../components/ErrorText";
 import Services from "../Services/Service";
+import { logo } from "../components/Images";
 
 export default function ResetPasswordPage() {
   const [password, setpassword] = useState("");
@@ -71,7 +72,7 @@ export default function ResetPasswordPage() {
           <div className="d-flex justify-content-center py-4">
             <Link to="/">
               <img
-                src="https://webitss.com/static/media/logo_webitss.4b5c4c13ae62557fe69d.png"
+                src={logo}
                 style={{
                   width: 80,
                   height: 80,
