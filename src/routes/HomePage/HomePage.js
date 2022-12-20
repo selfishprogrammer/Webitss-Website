@@ -252,7 +252,7 @@ export default function HomePage() {
       </div>
       <StepsPages />
       <WhatweDo />
-      <DemoProjects />
+      {/* <DemoProjects /> */}
       <FooterScreen />
     </>
   );

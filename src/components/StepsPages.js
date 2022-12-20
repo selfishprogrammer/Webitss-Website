@@ -27,7 +27,7 @@ export default function StepsPages() {
             <div
               className="shadow bg-white p-4 my-4"
               id="steps"
-              style={{ borderRadius: 20, cursor: "pointer" }}
+              style={{ borderRadius: 20, cursor: "pointer", height: "89%" }}
             >
               <div className="d-flex justify-content-center">
                 <img
@@ -84,7 +84,7 @@ export default function StepsPages() {
             <div
               className="shadow bg-white p-4 my-4"
               id="steps"
-              style={{ borderRadius: 20, cursor: "pointer" }}
+              style={{ borderRadius: 20, cursor: "pointer", height: "89%" }}
             >
               <div className="d-flex justify-content-center">
                 <img
@@ -142,7 +142,7 @@ export default function StepsPages() {
             <div
               className="shadow bg-white p-4 my-4"
               id="steps"
-              style={{ borderRadius: 20, cursor: "pointer" }}
+              style={{ borderRadius: 20, cursor: "pointer", height: "89%" }}
             >
               <div className="d-flex justify-content-center">
                 <img
@@ -200,7 +200,7 @@ export default function StepsPages() {
             <div
               className="shadow bg-white p-4 my-4"
               id="steps"
-              style={{ borderRadius: 20, cursor: "pointer" }}
+              style={{ borderRadius: 20, cursor: "pointer", height: "89%" }}
             >
               <div className="d-flex justify-content-center">
                 <img
