@@ -2,6 +2,7 @@ import axios from "axios";
 import { base_url } from "../constants/Urls";
 
 export const postReq2 = (des_url, data) => {
+  console.log("baseUrl", process.env);
   let url = base_url + des_url;
   console.log(url);
   return new Promise((resolve, reject) => {
@@ -87,7 +88,8 @@ export default class Api {
           resolve(response.data);
         })
         .catch(function (error) {
-          reject(error);
+          console.log("status===>>", error);
+          reject(error.status);
         });
     });
   };

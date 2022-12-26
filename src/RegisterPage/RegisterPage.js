@@ -4,9 +4,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import ErrorText from "../components/ErrorText";
 import ErrorToast from "../components/ErrorToast";
-import { setUserData } from "../Redux/user";
 import "../RegisterPage/register.css";
-import Auth from "../Services/Auth";
 import Services from "../Services/Service";
 import { useNavigate } from "react-router";
 import { logo } from "../components/Images";
@@ -93,7 +91,7 @@ export default function RegisterPage() {
             navigate("/otp", {
               state: {
                 from: "registerPage",
-                userInfo: registerData,
+                userInfo: responce.details,
               },
               replace: true,
             });
