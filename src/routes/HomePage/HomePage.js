@@ -10,6 +10,7 @@ import "./home.css";
 import TCModal from "../../components/TCModal";
 import Auth from "../../Services/Auth";
 import Services from "../../Services/Service";
+import Portfolio from "../../components/Portfolio";
 export default function HomePage() {
   const [isVisible, setisVisible] = useState(false);
   const [newVersion, setnewVersion] = useState("");
@@ -252,7 +253,8 @@ export default function HomePage() {
       </div>
       <StepsPages />
       <WhatweDo />
-      {/* <DemoProjects /> */}
+      <DemoProjects />
+      <Portfolio />
       <FooterScreen />
     </>
   );

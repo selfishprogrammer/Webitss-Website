@@ -49,7 +49,7 @@ export default function Navbar() {
                 flexDirection: "row",
               }}
             >
-              <b>WEBITISS</b>
+              <b>WEBITSS</b>
             </span>
             <small
               style={{

@@ -75,7 +75,7 @@ export default function WhatweDo() {
               >
                 Web Development
               </h4>
-              <p
+              {/* <p
                 class="text-center px-4 pt-2 pb-5"
                 style={{
                   fontFamily: "monospace",
@@ -86,7 +86,7 @@ export default function WhatweDo() {
                 We Creates Static and Dynamics All Kinds Of Web Apps (Single
                 Pages Applications or Dynamics Page Applications) With SEO
                 Implementations in Very Low Costs Compare to Market Price.
-              </p>
+              </p> */}
             </div>
           </div>
 
@@ -107,7 +107,7 @@ export default function WhatweDo() {
               >
                 App Development
               </h4>
-              <p
+              {/* <p
                 class="text-center px-4 pt-2 pb-5"
                 style={{
                   fontFamily: "monospace",
@@ -118,7 +118,7 @@ export default function WhatweDo() {
                 We Creates Android and IOS Applications (Using React Native,
                 Flutter , Swift , Java Android) in Low Costs Compare to Market
                 Price.We Provide Lifetime Supports For Your App.
-              </p>
+              </p> */}
             </div>
           </div>
 
@@ -137,9 +137,9 @@ export default function WhatweDo() {
                   fontWeight: "bold",
                 }}
               >
-                Desktop Applications Development
+                Desktop App
               </h4>
-              <p
+              {/* <p
                 class="text-center px-4 pt-1 pb-5"
                 style={{
                   fontFamily: "monospace",
@@ -150,7 +150,7 @@ export default function WhatweDo() {
                 We Creates Desktop Applications (Using Java Swings and Python
                 Tkinter) in Low Costs Compare to Market Price.We Provide
                 Lifetime Supports For Your App.
-              </p>
+              </p> */}
             </div>
           </div>
         </Slider>

@@ -17,6 +17,10 @@ import homiez from "../assets/Images/homiez.png";
 import homiezWeb4 from "../assets/Images/homiezWeb4.png";
 import logo from "../assets/Images/logo.png";
 
+import shoppers from "../assets/Images/Shoppers.png";
+import erpio from "../assets/Images/erpio.png";
+import jersy from "../assets/Images/jersy.png";
+
 export {
   home,
   Covido,
@@ -32,4 +36,7 @@ export {
   homiez,
   homiezWeb4,
   logo,
+  shoppers,
+  erpio,
+  jersy,
 };
