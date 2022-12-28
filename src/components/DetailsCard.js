@@ -1,25 +1,26 @@
+import moment from "moment";
 import React from "react";
 
-export default function DetailsCard() {
+export default function DetailsCard({ details }) {
   return (
     <div
       class="shadow-sm bg-white p-3 border"
       style={{ borderRadius: 10, marginTop: 100 }}
     >
       <div className="col-md-12">
-          <img
-            width="60"
-            height="60"
-            src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png"
-            class="rounded mx-auto d-block"
-            alt="..."
-          />
-        </div>
+        <img
+          width="60"
+          height="60"
+          src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png"
+          class="rounded mx-auto d-block"
+          alt="..."
+        />
+      </div>
       <div
         className="text-center my-4"
         style={{ fontFamily: "monospace", fontWeight: "bold", fontSize: 25 }}
       >
-        Rahul Jha
+        {details.records.name}
       </div>
       <div
         className="container mx-4"
@@ -38,7 +39,7 @@ export default function DetailsCard() {
             <td
               style={{
                 fontFamily: "monospace",
-                alignItems:"center",
+                alignItems: "center",
                 width: "15%",
               }}
             >
@@ -50,7 +51,7 @@ export default function DetailsCard() {
                 width: "50%",
               }}
             >
-              1234567890
+              {details.records.phone}
             </td>
           </tr>
           <tr>
@@ -60,7 +61,7 @@ export default function DetailsCard() {
                 width: "40%",
               }}
             >
-              gmail
+              Email
             </td>
             <td
               style={{
@@ -76,7 +77,7 @@ export default function DetailsCard() {
                 width: "50%",
               }}
             >
-              rahul@gmail.com
+              {details.records.email}
             </td>
           </tr>
           <tr>
@@ -86,7 +87,7 @@ export default function DetailsCard() {
                 width: "40%",
               }}
             >
-              account type
+              Account Type
             </td>
             <td
               style={{
@@ -102,7 +103,7 @@ export default function DetailsCard() {
                 width: "50%",
               }}
             >
-              consumer{" "}
+              {details.records.categories}
             </td>
           </tr>
           <tr>
@@ -112,7 +113,7 @@ export default function DetailsCard() {
                 width: "40%",
               }}
             >
-              activated in
+              Created on
             </td>
             <td
               style={{
@@ -128,7 +129,7 @@ export default function DetailsCard() {
                 width: "50%",
               }}
             >
-              26-12-2022
+              {moment(details.records.date).format("DD-MMM-YYYY LT")}
             </td>
           </tr>
           <tr>
@@ -138,7 +139,7 @@ export default function DetailsCard() {
                 width: "40%",
               }}
             >
-              status
+              Account status
             </td>
             <td
               style={{
@@ -154,7 +155,7 @@ export default function DetailsCard() {
                 width: "50%",
               }}
             >
-              activated
+              {details.records.accountStatus}
             </td>
           </tr>
           <tr>
@@ -164,7 +165,7 @@ export default function DetailsCard() {
                 width: "40%",
               }}
             >
-              project
+              Orders
             </td>
             <td
               style={{
@@ -178,9 +179,12 @@ export default function DetailsCard() {
               style={{
                 fontFamily: "monospace",
                 width: "50%",
+                color: "red",
               }}
             >
-              e-commerce website
+              {details?.orderDetails === null
+                ? "none"
+                : details?.orderDetails?.order}
             </td>
           </tr>
           <tr>
@@ -190,7 +194,7 @@ export default function DetailsCard() {
                 width: "40%",
               }}
             >
-              advance
+              Advance Payment
             </td>
             <td
               style={{
@@ -206,7 +210,9 @@ export default function DetailsCard() {
                 width: "50%",
               }}
             >
-              10,000
+              {details?.orderDetails === null
+                ? "none"
+                : details?.orderDetails?.advance_payment}
             </td>
           </tr>
           <tr>
@@ -216,7 +222,7 @@ export default function DetailsCard() {
                 width: "40%",
               }}
             >
-              due payment
+              Due Payment
             </td>
             <td
               style={{
@@ -232,7 +238,9 @@ export default function DetailsCard() {
                 width: "50%",
               }}
             >
-              10,000
+              {details?.orderDetails === null
+                ? "none"
+                : details?.orderDetails?.due_payment}
             </td>
           </tr>
           <tr>
@@ -242,7 +250,7 @@ export default function DetailsCard() {
                 width: "40%",
               }}
             >
-              developer
+              Developer Assigned
             </td>
             <td
               style={{
@@ -258,7 +266,9 @@ export default function DetailsCard() {
                 width: "50%",
               }}
             >
-              Rahul Jha
+              {details?.orderDetails === null
+                ? "none"
+                : details?.orderDetails?.developer}
             </td>
           </tr>
         </tbody>

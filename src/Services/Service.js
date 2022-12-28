@@ -58,4 +58,10 @@ export default class Services {
       JSON.stringify(data)
     );
   };
+  static getUserDetailsAndOrder = (data) => {
+    return postReq2(
+      "Authentication/getUserDetailsandOrderInfo.php",
+      JSON.stringify(data)
+    );
+  };
 }
