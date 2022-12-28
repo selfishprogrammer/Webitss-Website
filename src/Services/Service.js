@@ -1,4 +1,4 @@
-import { postReq, postReq2 } from "./Api";
+import { postReq2 } from "./Api";
 
 export default class Services {
   static userRegister = async (data) => {
