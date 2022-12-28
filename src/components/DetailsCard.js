@@ -6,6 +6,15 @@ export default function DetailsCard() {
       class="shadow-sm bg-white p-3 border"
       style={{ borderRadius: 10, marginTop: 100 }}
     >
+      <div className="col-md-12">
+          <img
+            width="60"
+            height="60"
+            src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png"
+            class="rounded mx-auto d-block"
+            alt="..."
+          />
+        </div>
       <div
         className="text-center my-4"
         style={{ fontFamily: "monospace", fontWeight: "bold", fontSize: 25 }}
@@ -254,16 +263,6 @@ export default function DetailsCard() {
           </tr>
         </tbody>
       </div>
-
-      {/* <div className="col-md-4">
-          <img
-            width="60"
-            height="60"
-            src="https://images.pexels.com/photos/55838/flower-rose-blossom-bloom-55838.jpeg?cs=srgb&dl=pexels-pixabay-55838.jpg&fm=jpg"
-            class="rounded mx-auto d-block"
-            alt="..."
-          />
-        </div> */}
     </div>
   );
 }
