@@ -55,16 +55,9 @@ export default function LoginPage() {
         setisLoading(true);
         const userLoginData = await Services.userLogin(userData);
         if (userLoginData.status === "true") {
-          const loginData = {
-            name: userLoginData?.name,
-            email: userLoginData?.email,
-            phone: userLoginData?.phone,
-            categories: userLoginData?.categories,
-            user_id: userLoginData?.user_id,
-          };
-          Auth.setUser(loginData);
-          Auth.setUserEmail(loginData.email);
-          dispatch(setUserData(loginData));
+          Auth.setUser(userLoginData?.details);
+          Auth.setUserEmail(userLoginData?.details?.email);
+          dispatch(setUserData(userLoginData?.details));
           dispatch(setLogin(true));
           const user = await Auth.getUser();
           if (user.categories === "admin") {
@@ -75,22 +68,15 @@ export default function LoginPage() {
           setisLoading(false);
         } else if (userLoginData.status === "notVerified") {
           setbackendResponce(userLoginData?.data);
-          const registerData = {
-            name: userLoginData?.name,
-            email: userLoginData?.email,
-            phone: userLoginData?.phone,
-            categories: userLoginData?.categories,
-            user_id: userLoginData?.user_id,
-          };
           setTimeout(async () => {
             const resp = await Services.generateOtp({
-              email: userLoginData?.email,
+              email: userLoginData?.details?.email,
             });
             if (resp.status === undefined) {
               navigate("/otp", {
                 state: {
                   from: "registerPage",
-                  userInfo: registerData,
+                  userInfo: userLoginData?.details,
                 },
                 replace: true,
               });

@@ -8,6 +8,7 @@ import RegisterPage from "./RegisterPage/RegisterPage";
 import ResetPasswordPage from "./ResetPassword.js/ResetPasswordPage";
 import AboutPage from "./routes/AboutPage/AboutPage";
 import AdminPage from "./routes/AdminPage/AdminPage";
+import NewAdminPage from "./routes/AdminPage/NewAdminPage";
 import TotalDemoProjects from "./routes/AdminPage/TotalDemoProjects";
 import TotalOrders from "./routes/AdminPage/TotalOrders";
 import TotalQueries from "./routes/AdminPage/TotalQueries";
@@ -73,7 +74,8 @@ export default function App() {
         <Route path="/tc" element={<TermsAndConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicies />} />
         <Route path="/profile" element={<ProfilePageCheck />} />
-        <Route path="/admin" element={<AdminPage />} />
+        {/* <Route path="/admin" element={<AdminPage />} /> */}
+        <Route path="/admin" element={<NewAdminPage />} />
         <Route path="/totalUsers" element={<TotalUsers />} />
         <Route path="/totalOrders" element={<TotalOrders />} />
         <Route path="/totalQueries" element={<TotalQueries />} />
