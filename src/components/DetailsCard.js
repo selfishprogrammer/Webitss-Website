@@ -14,22 +14,23 @@ export default function DetailsCard() {
       </div>
       <div
         className="container mx-4"
-        style={{ width: "70%", alignSelf: "center" }}
+        style={{ width: "99%", alignSelf: "center" }}
       >
         <tbody className="">
           <tr>
             <td
               style={{
                 fontFamily: "monospace",
-                width: "30%",
+                width: "40%",
               }}
             >
-              Name
+              Mobile
             </td>
             <td
               style={{
                 fontFamily: "monospace",
-                width: "20%",
+                alignItems:"center",
+                width: "15%",
               }}
             >
               :
@@ -40,22 +41,22 @@ export default function DetailsCard() {
                 width: "50%",
               }}
             >
-              Rahul Jha
+              1234567890
             </td>
           </tr>
           <tr>
             <td
               style={{
                 fontFamily: "monospace",
-                width: "30%",
+                width: "40%",
               }}
             >
-              Email
+              gmail
             </td>
             <td
               style={{
                 fontFamily: "monospace",
-                width: "20%",
+                width: "15%",
               }}
             >
               :
@@ -73,41 +74,15 @@ export default function DetailsCard() {
             <td
               style={{
                 fontFamily: "monospace",
-                width: "30%",
+                width: "40%",
               }}
             >
-              Phone
+              account type
             </td>
             <td
               style={{
                 fontFamily: "monospace",
-                width: "20%",
-              }}
-            >
-              :
-            </td>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "50%",
-              }}
-            >
-              6296002855{" "}
-            </td>
-          </tr>
-          <tr>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "30%",
-              }}
-            >
-              Name
-            </td>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "20%",
+                width: "15%",
               }}
             >
               :
@@ -118,22 +93,22 @@ export default function DetailsCard() {
                 width: "50%",
               }}
             >
-              Rahul Jha
+              consumer{" "}
             </td>
           </tr>
           <tr>
             <td
               style={{
                 fontFamily: "monospace",
-                width: "30%",
+                width: "40%",
               }}
             >
-              Name
+              activated in
             </td>
             <td
               style={{
                 fontFamily: "monospace",
-                width: "20%",
+                width: "15%",
               }}
             >
               :
@@ -144,22 +119,22 @@ export default function DetailsCard() {
                 width: "50%",
               }}
             >
-              Rahul Jha
+              26-12-2022
             </td>
           </tr>
           <tr>
             <td
               style={{
                 fontFamily: "monospace",
-                width: "30%",
+                width: "40%",
               }}
             >
-              Name
+              status
             </td>
             <td
               style={{
                 fontFamily: "monospace",
-                width: "20%",
+                width: "15%",
               }}
             >
               :
@@ -170,22 +145,100 @@ export default function DetailsCard() {
                 width: "50%",
               }}
             >
-              Rahul Jha
+              activated
             </td>
           </tr>
           <tr>
             <td
               style={{
                 fontFamily: "monospace",
-                width: "30%",
+                width: "40%",
               }}
             >
-              Name
+              project
             </td>
             <td
               style={{
                 fontFamily: "monospace",
-                width: "20%",
+                width: "15%",
+              }}
+            >
+              :
+            </td>
+            <td
+              style={{
+                fontFamily: "monospace",
+                width: "50%",
+              }}
+            >
+              e-commerce website
+            </td>
+          </tr>
+          <tr>
+            <td
+              style={{
+                fontFamily: "monospace",
+                width: "40%",
+              }}
+            >
+              advance
+            </td>
+            <td
+              style={{
+                fontFamily: "monospace",
+                width: "15%",
+              }}
+            >
+              :
+            </td>
+            <td
+              style={{
+                fontFamily: "monospace",
+                width: "50%",
+              }}
+            >
+              10,000
+            </td>
+          </tr>
+          <tr>
+            <td
+              style={{
+                fontFamily: "monospace",
+                width: "40%",
+              }}
+            >
+              due payment
+            </td>
+            <td
+              style={{
+                fontFamily: "monospace",
+                width: "15%",
+              }}
+            >
+              :
+            </td>
+            <td
+              style={{
+                fontFamily: "monospace",
+                width: "50%",
+              }}
+            >
+              10,000
+            </td>
+          </tr>
+          <tr>
+            <td
+              style={{
+                fontFamily: "monospace",
+                width: "40%",
+              }}
+            >
+              developer
+            </td>
+            <td
+              style={{
+                fontFamily: "monospace",
+                width: "15%",
               }}
             >
               :

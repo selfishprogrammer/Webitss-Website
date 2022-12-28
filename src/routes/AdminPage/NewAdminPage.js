@@ -24,7 +24,7 @@ const NewAdminPage = () => {
               >
                 <div class="table-responsive">
                   <table class="table table-bordered table-hover">
-                    <thead>
+                    <thead style={{cursor: "pointer"}}>
                       <tr>
                         <th
                           scope="col"
@@ -82,7 +82,7 @@ const NewAdminPage = () => {
                         </th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody style={{cursor: "pointer"}}>
                       <tr>
                         <td
                           style={{
