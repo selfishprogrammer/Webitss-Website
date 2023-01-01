@@ -64,4 +64,19 @@ export default class Services {
       JSON.stringify(data)
     );
   };
+  static totalDevelopers = () => {
+    return postReq2("Authentication/TotalDevelopers.php");
+  };
+  static getDevelopersDetailsAndOrder = (data) => {
+    return postReq2(
+      "Authentication/getDevelopersDetailsAndOrder.php",
+      JSON.stringify(data)
+    );
+  };
+  static updateUserOrDeveloperAccountStatus = (data) => {
+    return postReq2(
+      "Authentication/updateUserStatus.php",
+      JSON.stringify(data)
+    );
+  };
 }

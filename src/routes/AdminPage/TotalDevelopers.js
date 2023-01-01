@@ -1,29 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import "./AdminPages.css";
 import Services from "../../Services/Service";
 import AdminNav from "./AdminNav";
-import { useLocation, useNavigate } from "react-router";
+import { useLocation } from "react-router";
 import DetailsCard from "../../components/DetailsCard";
 import moment from "moment";
-
-const TotalUsers = () => {
+const TotalDevelopers = () => {
   const [detailsCardStatus, setdetailsCardStatus] = useState(false);
-  const [userDetailsAndOrder, setuserDetailsAndOrder] = useState({});
+  const [developerDetailsAndOrder, setdeveloperDetailsAndOrder] = useState({});
 
   const location = useLocation();
-  const { totalUser } = location.state;
+  const { totalDevelopers } = location.state;
 
   const showDetails = async (email) => {
     console.log("email==>", email);
-    const getUserDetails = await Services.getUserDetailsAndOrder({
+    const getDevelopersDetails = await Services.getDevelopersDetailsAndOrder({
       email: email,
     });
-    console.log("totalDetails===>>", getUserDetails);
-    if (getUserDetails && getUserDetails.status === "true") {
-      setuserDetailsAndOrder(getUserDetails);
+    console.log("totalDetails===>>", getDevelopersDetails);
+    if (getDevelopersDetails && getDevelopersDetails.status === "true") {
+      setdeveloperDetailsAndOrder(getDevelopersDetails);
       setdetailsCardStatus(true);
     } else {
-      alert(getUserDetails.data);
+      alert(getDevelopersDetails.data);
     }
   };
   return (
@@ -37,7 +36,7 @@ const TotalUsers = () => {
               style={{ borderRadius: 20 }}
             >
               <div className="text-center" style={{ fontSize: 30 }}>
-                TOTAL USERS
+                TOTAL DEVELOPERS
               </div>
               <div
                 className="mt-5"
@@ -81,7 +80,7 @@ const TotalUsers = () => {
                             fontWeight: "bold",
                           }}
                         >
-                          VERIFIED
+                          ROLE
                         </th>
                         <th
                           scope="col"
@@ -90,7 +89,7 @@ const TotalUsers = () => {
                             fontWeight: "bold",
                           }}
                         >
-                          TYPE
+                          DEVELOPER STATUS
                         </th>
                         <th
                           scope="col"
@@ -99,7 +98,7 @@ const TotalUsers = () => {
                             fontWeight: "bold",
                           }}
                         >
-                          STATUS
+                          ACCOUNT STATUS
                         </th>
                         <th
                           scope="col"
@@ -113,11 +112,11 @@ const TotalUsers = () => {
                       </tr>
                     </thead>
                     <tbody style={{ cursor: "pointer" }}>
-                      {totalUser.map((item, key) => (
+                      {totalDevelopers.map((item, key) => (
                         <tr
                           style={{
                             backgroundColor:
-                              userDetailsAndOrder?.records?.email ===
+                              developerDetailsAndOrder?.records?.email ===
                                 item.email && detailsCardStatus
                                 ? item.accountStatus === "active"
                                   ? "#33DAFF"
@@ -152,14 +151,14 @@ const TotalUsers = () => {
                               fontFamily: "monospace",
                             }}
                           >
-                            {item.emailVerified}
+                            {item.devRole}
                           </td>
                           <td
                             style={{
                               fontFamily: "monospace",
                             }}
                           >
-                            {item.categories}
+                            {item.devStatus}
                           </td>
                           <td
                             style={{
@@ -185,7 +184,10 @@ const TotalUsers = () => {
           </div>
           <div class="col-md-4">
             {detailsCardStatus ? (
-              <DetailsCard details={userDetailsAndOrder} type="user" />
+              <DetailsCard
+                details={developerDetailsAndOrder}
+                type="developer"
+              />
             ) : null}
           </div>
         </div>
@@ -193,4 +195,4 @@ const TotalUsers = () => {
     </>
   );
 };
-export default TotalUsers;
+export default TotalDevelopers;

@@ -30,6 +30,7 @@ export default function TCModal({ IsVisible, accept }) {
             src="https://icon-library.com/images/tick-icon/tick-icon-16.jpg"
             width="60"
             height="60"
+            alt=""
           />
         </div>
         <div
