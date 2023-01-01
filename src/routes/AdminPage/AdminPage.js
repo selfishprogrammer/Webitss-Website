@@ -24,6 +24,8 @@ export default function AdminPage() {
   const [totalQueriesCount, settotalQueriesCounts] = useState("");
   const [totalDemo, settotalDemos] = useState([]);
   const [totalDemoCount, settotalDemoCounts] = useState("");
+  const [totalDevelopers, settotalDeveloperss] = useState([]);
+  const [totalDeveloperCount, settotalDeveloperCounts] = useState("");
   useEffect(() => {
     totalUsers();
     totalOrders();
@@ -34,6 +36,7 @@ export default function AdminPage() {
     totalInprogressOrders();
     totalQueriess();
     totalDemoProject();
+    totalDeveloper();
   }, []);
 
   const totalUsers = async () => {
@@ -133,6 +136,17 @@ export default function AdminPage() {
       settotalDemoCounts("0");
     }
   };
+
+  const totalDeveloper = async () => {
+    const data = await Services.totalDevelopers();
+    if (data?.status === "true") {
+      settotalDeveloperss(data?.records);
+      settotalDeveloperCounts(data?.count);
+    } else {
+      settotalDeveloperss(data?.records);
+      settotalDeveloperss("0");
+    }
+  };
   const navigate = useNavigate();
 
   console.log("users===>>>", totalUserCount, totalUser);
@@ -160,6 +174,35 @@ export default function AdminPage() {
                 style={{ fontSize: 30, fontFamily: "serif" }}
               >
                 TOTAL USERS
+              </div>
+              <div
+                className="text-center"
+                id="text"
+                style={{ fontSize: 30, fontFamily: "serif" }}
+              >
+                {totalUserCount}
+              </div>
+            </div>
+          </div>
+          <div
+            className="col-md-4 my-3"
+            id="steps"
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              navigate("/totalDevelopers", {
+                state: {
+                  totalDevelopers: totalDevelopers,
+                },
+              });
+            }}
+          >
+            <div className="shadow px-5 py-2" style={{ borderRadius: 20 }}>
+              <div
+                className="text-center"
+                id="text"
+                style={{ fontSize: 30, fontFamily: "serif" }}
+              >
+                TOTAL DEVS
               </div>
               <div
                 className="text-center"

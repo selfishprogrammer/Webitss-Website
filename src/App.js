@@ -9,6 +9,7 @@ import ResetPasswordPage from "./ResetPassword.js/ResetPasswordPage";
 import AboutPage from "./routes/AboutPage/AboutPage";
 import AdminPage from "./routes/AdminPage/AdminPage";
 import TotalDemoProjects from "./routes/AdminPage/TotalDemoProjects";
+import TotalDevelopers from "./routes/AdminPage/TotalDevelopers";
 import TotalOrders from "./routes/AdminPage/TotalOrders";
 import TotalQueries from "./routes/AdminPage/TotalQueries";
 import TotalUsers from "./routes/AdminPage/TotalUsers";
@@ -78,6 +79,7 @@ export default function App() {
         <Route path="/totalOrders" element={<TotalOrders />} />
         <Route path="/totalQueries" element={<TotalQueries />} />
         <Route path="/totalDemoProject" element={<TotalDemoProjects />} />
+        <Route path="/totalDevelopers" element={<TotalDevelopers />} />
       </Routes>
     );
   };

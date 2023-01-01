@@ -1,7 +1,29 @@
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router";
+import Services from "../Services/Service";
+import AccountStatusModal from "./AccountStatusModal";
 
-export default function DetailsCard({ details }) {
+export default function DetailsCard({ details, type }) {
+  const [accountModalStatus, setaccountModalStatus] = useState(false);
+  const navigate = useNavigate();
+  const updateUserOrDeveloperStatus = async (reason) => {
+    const updateDetails = {
+      email: details.records.email,
+      status:
+        details.records.accountStatus === "active" ? "deactive" : "active",
+      statusOf: type,
+      reason: reason,
+    };
+    const updateAccountStatus =
+      await Services.updateUserOrDeveloperAccountStatus(updateDetails);
+    if (updateAccountStatus && updateAccountStatus.status === "true") {
+      setaccountModalStatus(false);
+      navigate("/admin");
+    } else {
+      alert("Something went wrong!");
+    }
+  };
   return (
     <div
       class="shadow-sm bg-white p-3 border"
@@ -272,6 +294,27 @@ export default function DetailsCard({ details }) {
             </td>
           </tr>
         </tbody>
+        <div className="d-flex justify-content-end my-4">
+          <button
+            onClick={() => setaccountModalStatus(true)}
+            style={{ borderRadius: 8, fontWeight: "bold" }}
+            className={
+              details?.records.accountStatus === "active"
+                ? "btn btn-success"
+                : "btn btn-danger"
+            }
+          >
+            {details?.records.accountStatus === "active"
+              ? "Deactive"
+              : "Active"}
+          </button>
+        </div>
+        <AccountStatusModal
+          IsVisible={accountModalStatus}
+          accept={(reason) => updateUserOrDeveloperStatus(reason)}
+          closeModal={() => setaccountModalStatus(false)}
+          details={details.records.accountStatus}
+        />
       </div>
     </div>
   );

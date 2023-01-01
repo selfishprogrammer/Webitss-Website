@@ -1,0 +1,6 @@
+.tableBackgroundActive{
+    background-color: transparent;
+}
+.tableBackgroundActive:hover{
+    background-color: #33DAFF;
+}

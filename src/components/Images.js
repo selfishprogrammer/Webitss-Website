@@ -20,6 +20,7 @@ import logo from "../assets/Images/logo.png";
 import shoppers from "../assets/Images/Shoppers.png";
 import erpio from "../assets/Images/erpio.png";
 import jersy from "../assets/Images/jersy.png";
+import cross from "../assets/Images/cross.png";
 
 export {
   home,
@@ -39,4 +40,5 @@ export {
   shoppers,
   erpio,
   jersy,
+  cross,
 };
