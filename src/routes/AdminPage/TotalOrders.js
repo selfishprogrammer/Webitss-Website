@@ -37,7 +37,7 @@ const TotalOrders = () => {
               style={{ borderRadius: 20 }}
             >
               <div className="text-center" style={{ fontSize: 30 }}>
-              TOTAL REJECTED ORDER
+              TOTAL ORDERS
               </div>
               <div
                 className="mt-5"
