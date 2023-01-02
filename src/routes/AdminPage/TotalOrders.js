@@ -7,24 +7,16 @@ import DetailsCard from "../../components/DetailsCard";
 import moment from "moment";
 const TotalOrders = () => {
   const [detailsCardStatus, setdetailsCardStatus] = useState(false);
-  const [showModal, setShowModal] = useState(false)
-  const [developerDetailsAndOrder, setdeveloperDetailsAndOrder] = useState({});
+  // const [showModal, setShowModal] = useState(false)
+  const [OrdersDetails, setOrdersDetails] = useState({});
 
   const location = useLocation();
-  const { totalDevelopers } = location.state;
+  const { totalOrder } = location.state;
 
-  const showDetails = async (email) => {
-    console.log("email==>", email);
-    const getDevelopersDetails = await Services.getDevelopersDetailsAndOrder({
-      email: email,
-    });
-    console.log("totalDetails===>>", getDevelopersDetails);
-    if (getDevelopersDetails && getDevelopersDetails.status === "true") {
-      setdeveloperDetailsAndOrder(getDevelopersDetails);
-      setdetailsCardStatus(true);
-    } else {
-      alert(getDevelopersDetails.data);
-    }
+  const showDetails = async (getOrderDetails) => {
+    console.log("totalDetails===>>", getOrderDetails);
+    setOrdersDetails(getOrderDetails);
+    setdetailsCardStatus(true);
   };
   return (
     <>
@@ -37,7 +29,7 @@ const TotalOrders = () => {
               style={{ borderRadius: 20 }}
             >
               <div className="text-center" style={{ fontSize: 30 }}>
-              TOTAL ORDERS
+                TOTAL ORDERS
               </div>
               <div
                 className="mt-5"
@@ -101,79 +93,84 @@ const TotalOrders = () => {
                         >
                           PROJECT STATUS
                         </th>
+                        <th
+                          scope="col"
+                          style={{
+                            fontFamily: "monospace",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          DATE OF ORDER
+                        </th>
                       </tr>
                     </thead>
                     <tbody style={{ cursor: "pointer" }}>
-                      {/* {totalDevelopers.map((item, key) => ( */}
+                      {totalOrder.map((item, key) => (
                         <tr
-                          // style={{
-                          //   backgroundColor:
-                          //     developerDetailsAndOrder?.records?.email ===
-                          //       item.email && detailsCardStatus
-                          //       ? item.accountStatus === "active"
-                          //         ? "#33DAFF"
-                          //         : "red"
-                          //       : "transparent",
-                          // }}
-                          // onClick={() => showDetails(item.email)}
-                          onClick={()=>{setShowModal(true)}}
+                          style={{
+                            backgroundColor:
+                              OrdersDetails?.records?.email === item.email &&
+                              detailsCardStatus
+                                ? item.accountStatus === "active"
+                                  ? "#33DAFF"
+                                  : "red"
+                                : "transparent",
+                          }}
+                          onClick={() => showDetails(item)}
                         >
                           <td
                             style={{
                               fontFamily: "monospace",
                             }}
                           >
-                            {/* {item.name} */}
-                            D169452
+                            {item.OrderID}
                           </td>
                           <td
                             style={{
                               fontFamily: "monospace",
                             }}
                           >
-                            {/* {item.email} */}
-                            DATABASE MANAGEMENT
+                            {item.order.toUpperCase()}
                           </td>
                           <td
                             style={{
                               fontFamily: "monospace",
                             }}
                           >
-                            {/* {item.phone} */}
-                            BUBAI DAS
+                            {item.name.toUpperCase()}
                           </td>
                           <td
                             style={{
                               fontFamily: "monospace",
                             }}
                           >
-                            DESKTOP APPLICATION
-                            {/* {item.devRole} */}
+                            {item.order.toUpperCase()}
                           </td>
                           <td
                             style={{
                               fontFamily: "monospace",
                             }}
                           >
-                            {/* {item.devStatus} */}
+                            {item.developer.toUpperCase()}
                           </td>
                           <td
                             style={{
                               fontFamily: "monospace",
                             }}
                           >
-                            WITTING VERIFY
-                            {/* {item.accountStatus} */}
+                            {item.status.toUpperCase()}
                           </td>
-                          {/* <td
+                          <td
                             style={{
                               fontFamily: "monospace",
                             }}
                           >
-                            {moment(item.date).format("DD-MMM-YYYY LT")}
-                          </td> */}
+                            {moment(item.date)
+                              .format("DD-MMM-YYYY LT")
+                              .toUpperCase()}
+                          </td>
                         </tr>
-                      {/* ))} */}
+                      ))}
                     </tbody>
                   </table>
                 </div>
@@ -181,11 +178,8 @@ const TotalOrders = () => {
             </div>
           </div>
           <div class="col-md-4">
-            {showModal ? (
-              <DetailsCard
-                // details={developerDetailsAndOrder}
-                type="totalOders"
-              />
+            {detailsCardStatus ? (
+              <DetailsCard details={OrdersDetails} type="orders" />
             ) : null}
           </div>
         </div>
@@ -194,4 +188,3 @@ const TotalOrders = () => {
   );
 };
 export default TotalOrders;
-

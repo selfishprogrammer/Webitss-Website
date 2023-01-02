@@ -24,6 +24,7 @@ export default function DetailsCard({ details, type }) {
       alert("Something went wrong!");
     }
   };
+  console.log("details===>>", details);
 
   const renderCardDetails = () => {
     switch (type) {
@@ -31,8 +32,8 @@ export default function DetailsCard({ details, type }) {
         return renderUserDetails();
       case "developer":
         return renderDeveloperDetails();
-        case "totalOders":
-          return renderTotalDetails();
+      case "orders":
+        return renderTotalDetails();
       default:
         return null;
     }
@@ -44,7 +45,7 @@ export default function DetailsCard({ details, type }) {
         <tr>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "40%",
             }}
           >
@@ -52,7 +53,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "15%",
             }}
           >
@@ -60,7 +61,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "50%",
             }}
           >
@@ -70,7 +71,7 @@ export default function DetailsCard({ details, type }) {
         <tr>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "40%",
             }}
           >
@@ -78,7 +79,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "15%",
             }}
           >
@@ -86,7 +87,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "50%",
             }}
           >
@@ -96,7 +97,7 @@ export default function DetailsCard({ details, type }) {
         <tr>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "40%",
             }}
           >
@@ -104,7 +105,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "15%",
             }}
           >
@@ -112,7 +113,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "50%",
             }}
           >
@@ -122,7 +123,7 @@ export default function DetailsCard({ details, type }) {
         <tr>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "40%",
             }}
           >
@@ -130,7 +131,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "15%",
             }}
           >
@@ -138,7 +139,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "50%",
               color: "red",
             }}
@@ -151,7 +152,7 @@ export default function DetailsCard({ details, type }) {
         <tr>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "40%",
             }}
           >
@@ -159,7 +160,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "15%",
             }}
           >
@@ -167,7 +168,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "50%",
             }}
           >
@@ -179,7 +180,7 @@ export default function DetailsCard({ details, type }) {
         <tr>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "40%",
             }}
           >
@@ -187,7 +188,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "15%",
             }}
           >
@@ -195,7 +196,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "50%",
             }}
           >
@@ -207,7 +208,7 @@ export default function DetailsCard({ details, type }) {
         <tr>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "40%",
             }}
           >
@@ -215,7 +216,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "15%",
             }}
           >
@@ -223,7 +224,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "50%",
             }}
           >
@@ -242,7 +243,7 @@ export default function DetailsCard({ details, type }) {
         <tr>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "40%",
             }}
           >
@@ -250,7 +251,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "15%",
             }}
           >
@@ -258,7 +259,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "50%",
             }}
           >
@@ -268,7 +269,7 @@ export default function DetailsCard({ details, type }) {
         <tr>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "40%",
             }}
           >
@@ -276,7 +277,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "15%",
             }}
           >
@@ -284,7 +285,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "50%",
             }}
           >
@@ -294,7 +295,7 @@ export default function DetailsCard({ details, type }) {
         <tr>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "40%",
             }}
           >
@@ -302,7 +303,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "15%",
             }}
           >
@@ -310,7 +311,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "50%",
             }}
           >
@@ -320,7 +321,7 @@ export default function DetailsCard({ details, type }) {
         <tr>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "40%",
             }}
           >
@@ -328,7 +329,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "15%",
             }}
           >
@@ -336,7 +337,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "50%",
             }}
           >
@@ -346,7 +347,7 @@ export default function DetailsCard({ details, type }) {
         <tr>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "40%",
             }}
           >
@@ -354,7 +355,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "15%",
             }}
           >
@@ -362,7 +363,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "50%",
               color: "red",
             }}
@@ -375,7 +376,7 @@ export default function DetailsCard({ details, type }) {
         <tr>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "40%",
             }}
           >
@@ -383,7 +384,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "15%",
             }}
           >
@@ -391,7 +392,7 @@ export default function DetailsCard({ details, type }) {
           </td>
           <td
             style={{
-              fontFamily: "monospace",
+              fontFamily: "math",
               width: "50%",
             }}
           >
@@ -405,14 +406,285 @@ export default function DetailsCard({ details, type }) {
   const renderTotalDetails = () => {
     return (
       <>
+        <tr>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "40%",
+            }}
+          >
+            Category
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "50%",
+            }}
+          >
+            {details.order}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "40%",
+            }}
+          >
+            Details
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "50%",
+              borderWidth: 1,
+              borderRadius: 6,
+            }}
+          >
+            {details?.details_of_order}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "40%",
+            }}
+          >
+            Project Price
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "50%",
+            }}
+          >
+            {details?.price}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "40%",
+            }}
+          >
+            Status
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "50%",
+            }}
+          >
+            {details?.status}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "40%",
+            }}
+          >
+            Advance Payment
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "50%",
+              color: "red",
+            }}
+          >
+            {details?.advance_payment}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "40%",
+            }}
+          >
+            Due Payment
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "50%",
+              color: "red",
+            }}
+          >
+            {details?.due_payment}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "40%",
+            }}
+          >
+            Developer Name
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "50%",
+              color: "red",
+            }}
+          >
+            {details?.developer}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "40%",
+            }}
+          >
+            Developer Email
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "50%",
+              color: "red",
+            }}
+          >
+            {details?.developerEmail}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "40%",
+            }}
+          >
+            Order On
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "math",
+              paddingTop: 15,
+              width: "50%",
+            }}
+          >
+            {moment(details?.date).format("DD-MMM-YYYY LT")}
+          </td>
+        </tr>
       </>
     );
-  }
+  };
 
   return (
     <div
       class="shadow-sm bg-white p-3 border"
-      style={{ borderRadius: 10, marginTop: 100 }}
+      style={{
+        borderRadius: 10,
+        marginTop: type === "orders" ? 0 : 100,
+        marginBottom: 10,
+      }}
     >
       <div className="col-md-12">
         <img
@@ -425,10 +697,28 @@ export default function DetailsCard({ details, type }) {
       </div>
       <div
         className="text-center my-4"
-        style={{ fontFamily: "monospace", fontWeight: "bold", fontSize: 25 }}
+        style={{ fontFamily: "math", fontWeight: "bold", fontSize: 25 }}
       >
-        {details.records.name}
+        {type === "orders" ? details.order : details.records.name}
       </div>
+      {type === "orders" ? (
+        <div className="d-flex justify-content-center">
+          <div
+            className=" my-2 p-1"
+            style={{
+              fontFamily: "math",
+              fontWeight: "bold",
+              fontSize: 17,
+              backgroundColor: "red",
+              color: "white",
+              width: "50%",
+              textAlign: "center",
+            }}
+          >
+            #{details.OrderID}
+          </div>
+        </div>
+      ) : null}
       <div
         className="container mx-4"
         style={{ width: "99%", alignSelf: "center" }}
@@ -437,7 +727,7 @@ export default function DetailsCard({ details, type }) {
           <tr>
             <td
               style={{
-                fontFamily: "monospace",
+                fontFamily: "math",
                 width: "40%",
               }}
             >
@@ -445,7 +735,7 @@ export default function DetailsCard({ details, type }) {
             </td>
             <td
               style={{
-                fontFamily: "monospace",
+                fontFamily: "math",
                 alignItems: "center",
                 width: "15%",
               }}
@@ -454,17 +744,17 @@ export default function DetailsCard({ details, type }) {
             </td>
             <td
               style={{
-                fontFamily: "monospace",
+                fontFamily: "math",
                 width: "50%",
               }}
             >
-              {details.records.phone}
+              {type === "orders" ? details.phone : details.records.phone}
             </td>
           </tr>
           <tr>
             <td
               style={{
-                fontFamily: "monospace",
+                fontFamily: "math",
                 width: "40%",
               }}
             >
@@ -472,7 +762,7 @@ export default function DetailsCard({ details, type }) {
             </td>
             <td
               style={{
-                fontFamily: "monospace",
+                fontFamily: "math",
                 width: "15%",
               }}
             >
@@ -480,37 +770,41 @@ export default function DetailsCard({ details, type }) {
             </td>
             <td
               style={{
-                fontFamily: "monospace",
+                fontFamily: "math",
                 width: "50%",
               }}
             >
-              {details.records.email}
+              {type === "orders" ? details.email : details.records.email}
             </td>
           </tr>
 
           {renderCardDetails()}
         </tbody>
-        <div className="d-flex justify-content-end my-4">
-          <button
-            onClick={() => setaccountModalStatus(true)}
-            style={{ borderRadius: 8, fontWeight: "bold" }}
-            className={
-              details?.records.accountStatus === "active"
-                ? "btn btn-danger"
-                : "btn btn-success"
-            }
-          >
-            {details?.records.accountStatus === "active"
-              ? "Deactive"
-              : "Active"}
-          </button>
-        </div>
-        <AccountStatusModal
-          IsVisible={accountModalStatus}
-          accept={(reason) => updateUserOrDeveloperStatus(reason)}
-          closeModal={() => setaccountModalStatus(false)}
-          details={details.records.accountStatus}
-        />
+        {type === "user" || type === "developer" ? (
+          <>
+            <div className="d-flex justify-content-end my-4">
+              <button
+                onClick={() => setaccountModalStatus(true)}
+                style={{ borderRadius: 8, fontWeight: "bold" }}
+                className={
+                  details?.records.accountStatus === "active"
+                    ? "btn btn-danger"
+                    : "btn btn-success"
+                }
+              >
+                {details?.records.accountStatus === "active"
+                  ? "Deactive"
+                  : "Active"}
+              </button>
+            </div>
+            <AccountStatusModal
+              IsVisible={accountModalStatus}
+              accept={(reason) => updateUserOrDeveloperStatus(reason)}
+              closeModal={() => setaccountModalStatus(false)}
+              details={details.records.accountStatus}
+            />
+          </>
+        ) : null}
       </div>
     </div>
   );
