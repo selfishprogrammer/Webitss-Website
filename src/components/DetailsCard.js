@@ -24,6 +24,382 @@ export default function DetailsCard({ details, type }) {
       alert("Something went wrong!");
     }
   };
+
+  const renderCardDetails = () => {
+    switch (type) {
+      case "user":
+        return renderUserDetails();
+      case "developer":
+        return renderDeveloperDetails();
+      default:
+        return null;
+    }
+  };
+
+  const renderUserDetails = () => {
+    return (
+      <>
+        <tr>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "40%",
+            }}
+          >
+            Account Type
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "50%",
+            }}
+          >
+            {details.records.categories}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "40%",
+            }}
+          >
+            Created on
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "50%",
+            }}
+          >
+            {moment(details.records.date).format("DD-MMM-YYYY LT")}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "40%",
+            }}
+          >
+            Account status
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "50%",
+            }}
+          >
+            {details.records.accountStatus}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "40%",
+            }}
+          >
+            Orders
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "50%",
+              color: "red",
+            }}
+          >
+            {details?.orderDetails === null
+              ? "none"
+              : details?.orderDetails?.order}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "40%",
+            }}
+          >
+            Advance Payment
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "50%",
+            }}
+          >
+            {details?.orderDetails === null
+              ? "none"
+              : details?.orderDetails?.advance_payment}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "40%",
+            }}
+          >
+            Due Payment
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "50%",
+            }}
+          >
+            {details?.orderDetails === null
+              ? "none"
+              : details?.orderDetails?.due_payment}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "40%",
+            }}
+          >
+            Developer Assigned
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "50%",
+            }}
+          >
+            {details?.orderDetails === null
+              ? "none"
+              : details?.orderDetails?.developer}
+          </td>
+        </tr>
+      </>
+    );
+  };
+
+  const renderDeveloperDetails = () => {
+    return (
+      <>
+        <tr>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "40%",
+            }}
+          >
+            Account Type
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "50%",
+            }}
+          >
+            {details.records.categories}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "40%",
+            }}
+          >
+            Developer Role
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "50%",
+            }}
+          >
+            {details.records.devRole}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "40%",
+            }}
+          >
+            Account status
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "50%",
+            }}
+          >
+            {details.records.accountStatus}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "40%",
+            }}
+          >
+            Developer Status
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "50%",
+            }}
+          >
+            {details.records.devStatus}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "40%",
+            }}
+          >
+            Orders
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "50%",
+              color: "red",
+            }}
+          >
+            {details?.orderDetails === null
+              ? "none"
+              : details?.orderDetails?.order}
+          </td>
+        </tr>
+        <tr>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "40%",
+            }}
+          >
+            Created on
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "15%",
+            }}
+          >
+            :
+          </td>
+          <td
+            style={{
+              fontFamily: "monospace",
+              width: "50%",
+            }}
+          >
+            {moment(details.records.date).format("DD-MMM-YYYY LT")}
+          </td>
+        </tr>
+      </>
+    );
+  };
+
   return (
     <div
       class="shadow-sm bg-white p-3 border"
@@ -102,197 +478,8 @@ export default function DetailsCard({ details, type }) {
               {details.records.email}
             </td>
           </tr>
-          <tr>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "40%",
-              }}
-            >
-              Account Type
-            </td>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "15%",
-              }}
-            >
-              :
-            </td>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "50%",
-              }}
-            >
-              {details.records.categories}
-            </td>
-          </tr>
-          <tr>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "40%",
-              }}
-            >
-              Created on
-            </td>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "15%",
-              }}
-            >
-              :
-            </td>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "50%",
-              }}
-            >
-              {moment(details.records.date).format("DD-MMM-YYYY LT")}
-            </td>
-          </tr>
-          <tr>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "40%",
-              }}
-            >
-              Account status
-            </td>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "15%",
-              }}
-            >
-              :
-            </td>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "50%",
-              }}
-            >
-              {details.records.accountStatus}
-            </td>
-          </tr>
-          <tr>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "40%",
-              }}
-            >
-              Orders
-            </td>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "15%",
-              }}
-            >
-              :
-            </td>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "50%",
-                color: "red",
-              }}
-            >
-              {details?.orderDetails === null
-                ? "none"
-                : details?.orderDetails?.order}
-            </td>
-          </tr>
-          <tr>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "40%",
-              }}
-            >
-              Advance Payment
-            </td>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "15%",
-              }}
-            >
-              :
-            </td>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "50%",
-              }}
-            >
-              {details?.orderDetails === null
-                ? "none"
-                : details?.orderDetails?.advance_payment}
-            </td>
-          </tr>
-          <tr>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "40%",
-              }}
-            >
-              Due Payment
-            </td>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "15%",
-              }}
-            >
-              :
-            </td>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "50%",
-              }}
-            >
-              {details?.orderDetails === null
-                ? "none"
-                : details?.orderDetails?.due_payment}
-            </td>
-          </tr>
-          <tr>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "40%",
-              }}
-            >
-              Developer Assigned
-            </td>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "15%",
-              }}
-            >
-              :
-            </td>
-            <td
-              style={{
-                fontFamily: "monospace",
-                width: "50%",
-              }}
-            >
-              {details?.orderDetails === null
-                ? "none"
-                : details?.orderDetails?.developer}
-            </td>
-          </tr>
+
+          {renderCardDetails()}
         </tbody>
         <div className="d-flex justify-content-end my-4">
           <button
