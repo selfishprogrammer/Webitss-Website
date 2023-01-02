@@ -1,64 +1,190 @@
-import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
+import "./AdminPages.css";
+import Services from "../../Services/Service";
+import AdminNav from "./AdminNav";
 import { useLocation } from "react-router";
-export default function TotalOrders() {
+import DetailsCard from "../../components/DetailsCard";
+import moment from "moment";
+const TotalOrders = () => {
+  const [detailsCardStatus, setdetailsCardStatus] = useState(false);
+  // const [showModal, setShowModal] = useState(false)
+  const [OrdersDetails, setOrdersDetails] = useState({});
+
   const location = useLocation();
   const { totalOrder } = location.state;
 
+  const showDetails = async (getOrderDetails) => {
+    console.log("totalDetails===>>", getOrderDetails);
+    setOrdersDetails(getOrderDetails);
+    setdetailsCardStatus(true);
+  };
   return (
-    <div>
-      <div
-        id="text"
-        className="text-center my-4"
-        style={{ fontSize: 30, fontFamily: "serif" }}
-      >
-        TOTAL ORDERS
-      </div>
-      <div
-        className="container shadow-sm border p-5"
-        // style={{ borderRadius: 20 }}
-      >
-        <div style={{ overflowX: "auto" }}>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">Serial No</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Phone</th>
-                <th scope="col">Order</th>
-                <th scope="col">Order Type</th>
-                <th scope="col">Details Of Order</th>
-                <th scope="col">Status</th>
-                <th scope="col">Developer</th>
-                <th scope="col">Price</th>
-                <th scope="col">Advanced Payment</th>
-                <th scope="col">Due Payment</th>
-                <th scope="col">Date</th>
-              </tr>
-            </thead>
-            {totalOrder?.map((item, key) => (
-              <tbody>
-                <tr>
-                  <th scope="row">{key + 1}</th>
-                  <td>{item.name}</td>
-                  <td>{item.email}</td>
-                  <td>{item.phone}</td>
-                  <td>{item.order}</td>
-                  <td>{item.orderType}</td>
-                  <td>{item.details_of_order}</td>
-                  <td>{item.status}</td>
-                  <td>{item.developer}</td>
-                  <td>{item.price}</td>
-                  <td>{item.advance_payment}</td>
-                  <td>{item.due_payment}</td>
-                  <td>{moment(item.date).format("DD-MMM-YYYY LT")}</td>
-                </tr>
-              </tbody>
-            ))}
-          </table>
+    <>
+      <AdminNav />
+      <div class="container-fluid" style={{ marginTop: 80 }}>
+        <div className="row">
+          <div class="col-md-8">
+            <div
+              className="shadow-lg bg-white p-5"
+              style={{ borderRadius: 20 }}
+            >
+              <div className="text-center" style={{ fontSize: 30 }}>
+                TOTAL ORDERS
+              </div>
+              <div
+                className="mt-5"
+                style={{ overflowY: "auto", height: "60vh" }}
+              >
+                <div class="table-responsive">
+                  <table class="table table-bordered table-hover">
+                    <thead style={{ cursor: "pointer" }}>
+                      <tr>
+                        <th
+                          scope="col"
+                          style={{
+                            fontFamily: "monospace",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          PROJECT ID
+                        </th>
+                        <th
+                          scope="col"
+                          style={{
+                            fontFamily: "monospace",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          PROJECT NAME
+                        </th>
+                        <th
+                          scope="col"
+                          style={{
+                            fontFamily: "monospace",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          CLIENT
+                        </th>
+                        <th
+                          scope="col"
+                          style={{
+                            fontFamily: "monospace",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          CATEGORY
+                        </th>
+                        <th
+                          scope="col"
+                          style={{
+                            fontFamily: "monospace",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          DEVELOPER
+                        </th>
+                        <th
+                          scope="col"
+                          style={{
+                            fontFamily: "monospace",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          PROJECT STATUS
+                        </th>
+                        <th
+                          scope="col"
+                          style={{
+                            fontFamily: "monospace",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          DATE OF ORDER
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody style={{ cursor: "pointer" }}>
+                      {totalOrder.map((item, key) => (
+                        <tr
+                          style={{
+                            backgroundColor:
+                              OrdersDetails?.records?.email === item.email &&
+                              detailsCardStatus
+                                ? item.accountStatus === "active"
+                                  ? "#33DAFF"
+                                  : "red"
+                                : "transparent",
+                          }}
+                          onClick={() => showDetails(item)}
+                        >
+                          <td
+                            style={{
+                              fontFamily: "monospace",
+                            }}
+                          >
+                            {item.OrderID}
+                          </td>
+                          <td
+                            style={{
+                              fontFamily: "monospace",
+                            }}
+                          >
+                            {item.order.toUpperCase()}
+                          </td>
+                          <td
+                            style={{
+                              fontFamily: "monospace",
+                            }}
+                          >
+                            {item.name.toUpperCase()}
+                          </td>
+                          <td
+                            style={{
+                              fontFamily: "monospace",
+                            }}
+                          >
+                            {item.order.toUpperCase()}
+                          </td>
+                          <td
+                            style={{
+                              fontFamily: "monospace",
+                            }}
+                          >
+                            {item.developer.toUpperCase()}
+                          </td>
+                          <td
+                            style={{
+                              fontFamily: "monospace",
+                            }}
+                          >
+                            {item.status.toUpperCase()}
+                          </td>
+                          <td
+                            style={{
+                              fontFamily: "monospace",
+                            }}
+                          >
+                            {moment(item.date)
+                              .format("DD-MMM-YYYY LT")
+                              .toUpperCase()}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            {detailsCardStatus ? (
+              <DetailsCard details={OrdersDetails} type="orders" />
+            ) : null}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
-}
+};
+export default TotalOrders;
