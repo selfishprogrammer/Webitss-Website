@@ -300,8 +300,8 @@ export default function DetailsCard({ details, type }) {
             style={{ borderRadius: 8, fontWeight: "bold" }}
             className={
               details?.records.accountStatus === "active"
-                ? "btn btn-success"
-                : "btn btn-danger"
+                ? "btn btn-danger"
+                : "btn btn-success"
             }
           >
             {details?.records.accountStatus === "active"
