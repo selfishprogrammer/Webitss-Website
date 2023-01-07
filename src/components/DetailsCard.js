@@ -3,10 +3,19 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import Services from "../Services/Service";
 import AccountStatusModal from "./AccountStatusModal";
+import StatusUpdateModal from "./StatusUpdateModal";
 
 export default function DetailsCard({ details, type }) {
   const [accountModalStatus, setaccountModalStatus] = useState(false);
+  const [statusUpdateModal, setstatusUpdateModal] = useState(false);
+  const [status, setstatus] = useState("");
+
   const navigate = useNavigate();
+  const handleProjectStatus = (sts) => {
+    setstatus(sts);
+    setstatusUpdateModal(true);
+  };
+
   const updateUserOrDeveloperStatus = async (reason) => {
     const updateDetails = {
       email: details.records.email,
@@ -677,6 +686,105 @@ export default function DetailsCard({ details, type }) {
     );
   };
 
+  const renderButton = () => {
+    if (type === "user" || type === "developer") {
+      return (
+        <>
+          <div className="d-flex justify-content-end my-4">
+            <button
+              onClick={() => setaccountModalStatus(true)}
+              style={{ borderRadius: 8, fontWeight: "bold" }}
+              className={
+                details?.records.accountStatus === "active"
+                  ? "form-control btn btn-outline-danger"
+                  : "form-control btn btn-outline-success"
+              }
+            >
+              {details?.records.accountStatus === "active"
+                ? "Deactive"
+                : "Active"}
+            </button>
+          </div>
+          <AccountStatusModal
+            IsVisible={accountModalStatus}
+            accept={(reason) => updateUserOrDeveloperStatus(reason)}
+            closeModal={() => setaccountModalStatus(false)}
+            details={details.records.accountStatus}
+          />
+        </>
+      );
+    } else {
+      if (details.status === "received") {
+        return (
+          <div className="row my-4">
+            <div className="col-md-6">
+              <button
+                className="form-control btn btn-outline-danger"
+                onClick={() => handleProjectStatus("reject")}
+              >
+                Reject
+              </button>
+            </div>
+            <div className="col-md-6">
+              <button
+                className="form-control btn btn-outline-success"
+                onClick={() => handleProjectStatus("approved")}
+              >
+                Approve
+              </button>
+            </div>
+          </div>
+        );
+      } else if (details.status === "inprogress") {
+        return (
+          <div className="row my-4">
+            <div className="col-md-6">
+              <button className="form-control btn btn-outline-danger">
+                Reject
+              </button>
+            </div>
+            <div className="col-md-6">
+              <button className="form-control btn btn-outline-success">
+                Complete
+              </button>
+            </div>
+          </div>
+        );
+      } else if (details.status === "completed" && details.rated === "No") {
+        return (
+          <button className="form-control btn btn-outline-warning my-4">
+            Notify to Rate
+          </button>
+        );
+      } else if (details.status === "Pending for advance") {
+        return (
+          <div className="row my-4">
+            <div className="col-md-4">
+              <button className="form-control btn btn-outline-danger">
+                Reject
+              </button>
+            </div>
+            <div className="col-md-4">
+              <button className="form-control btn btn-outline-success">
+                Notify For Advance Payment
+              </button>
+            </div>
+            <div className="col-md-4">
+              <button className="form-control btn btn-outline-primary">
+                Procced to In Progress
+              </button>
+            </div>
+          </div>
+        );
+      } else if (details.status === "rejected") {
+        return (
+          <button className="form-control btn btn-outline-secondary my-4">
+            Reactivate
+          </button>
+        );
+      }
+    }
+  };
   return (
     <div
       class="shadow-sm bg-white p-3 border"
@@ -780,32 +888,16 @@ export default function DetailsCard({ details, type }) {
 
           {renderCardDetails()}
         </tbody>
-        {type === "user" || type === "developer" ? (
-          <>
-            <div className="d-flex justify-content-end my-4">
-              <button
-                onClick={() => setaccountModalStatus(true)}
-                style={{ borderRadius: 8, fontWeight: "bold" }}
-                className={
-                  details?.records.accountStatus === "active"
-                    ? "btn btn-danger"
-                    : "btn btn-success"
-                }
-              >
-                {details?.records.accountStatus === "active"
-                  ? "Deactive"
-                  : "Active"}
-              </button>
-            </div>
-            <AccountStatusModal
-              IsVisible={accountModalStatus}
-              accept={(reason) => updateUserOrDeveloperStatus(reason)}
-              closeModal={() => setaccountModalStatus(false)}
-              details={details.records.accountStatus}
-            />
-          </>
-        ) : null}
+        {renderButton()}
       </div>
+
+      <StatusUpdateModal
+        IsVisible={statusUpdateModal}
+        closeModal={() => setstatusUpdateModal(false)}
+        accept={() => setstatusUpdateModal(false)}
+        status={status}
+        details={details}
+      />
     </div>
   );
 }

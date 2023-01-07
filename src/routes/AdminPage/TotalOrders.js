@@ -12,11 +12,41 @@ const TotalOrders = () => {
 
   const location = useLocation();
   const { totalOrder } = location.state;
-
   const showDetails = async (getOrderDetails) => {
     console.log("totalDetails===>>", getOrderDetails);
     setOrdersDetails(getOrderDetails);
     setdetailsCardStatus(true);
+  };
+  console.log("orderDetails", OrdersDetails);
+  console.log("items", totalOrder);
+  const colorCodeBasedOnProjectStatus = (status) => {
+    let color = "";
+    // alert(status);
+    console.log("items");
+    switch (status) {
+      case "pending":
+        color = "yellowgreen";
+        break;
+      case "inprogress":
+        color = "blue";
+
+        break;
+      case "completed":
+        color = "yellowgreen";
+
+        break;
+      case "rejected":
+        color = "red";
+
+        break;
+      case "Pending for advance":
+        color = "brown";
+
+        break;
+      default:
+        break;
+    }
+    return color;
   };
   return (
     <>
@@ -109,11 +139,10 @@ const TotalOrders = () => {
                         <tr
                           style={{
                             backgroundColor:
-                              OrdersDetails?.records?.email === item.email &&
+                              OrdersDetails?.email === item.email &&
+                              OrdersDetails.status === item.status &&
                               detailsCardStatus
-                                ? item.accountStatus === "active"
-                                  ? "#33DAFF"
-                                  : "red"
+                                ? colorCodeBasedOnProjectStatus(item.status)
                                 : "transparent",
                           }}
                           onClick={() => showDetails(item)}
@@ -123,49 +152,49 @@ const TotalOrders = () => {
                               fontFamily: "monospace",
                             }}
                           >
-                            {item.OrderID}
+                            {item?.OrderID}
                           </td>
                           <td
                             style={{
                               fontFamily: "monospace",
                             }}
                           >
-                            {item.order.toUpperCase()}
+                            {item?.order.toUpperCase()}
                           </td>
                           <td
                             style={{
                               fontFamily: "monospace",
                             }}
                           >
-                            {item.name.toUpperCase()}
+                            {item?.name.toUpperCase()}
                           </td>
                           <td
                             style={{
                               fontFamily: "monospace",
                             }}
                           >
-                            {item.order.toUpperCase()}
+                            {item?.order.toUpperCase()}
                           </td>
                           <td
                             style={{
                               fontFamily: "monospace",
                             }}
                           >
-                            {item.developer.toUpperCase()}
+                            {item?.developer.toUpperCase()}
                           </td>
                           <td
                             style={{
                               fontFamily: "monospace",
                             }}
                           >
-                            {item.status.toUpperCase()}
+                            {item?.status.toUpperCase()}
                           </td>
                           <td
                             style={{
                               fontFamily: "monospace",
                             }}
                           >
-                            {moment(item.date)
+                            {moment(item?.date)
                               .format("DD-MMM-YYYY LT")
                               .toUpperCase()}
                           </td>
