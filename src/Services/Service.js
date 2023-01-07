@@ -1,4 +1,4 @@
-import { postReq2 } from "./Api";
+import { postReq, postReq2 } from "./Api";
 
 export default class Services {
   static userRegister = async (data) => {
@@ -76,6 +76,13 @@ export default class Services {
   static updateUserOrDeveloperAccountStatus = (data) => {
     return postReq2(
       "Authentication/updateUserStatus.php",
+      JSON.stringify(data)
+    );
+  };
+
+  static getOrderDetailsBasedOnStatus = (data) => {
+    return postReq(
+      "Components/GetOrderDetailsByEmail.php",
       JSON.stringify(data)
     );
   };

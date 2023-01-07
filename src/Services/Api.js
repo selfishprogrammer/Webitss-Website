@@ -28,7 +28,6 @@ export const postReq = (des_url, data) => {
   console.log(url);
   return new Promise((resolve, reject) => {
     let headers = "Content-Type: application/json";
-
     axios
       .post(url, data, headers)
       .then(function (response) {
