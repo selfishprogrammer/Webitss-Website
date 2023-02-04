@@ -6,6 +6,7 @@ import Navbar from "../../components/Navbar";
 import SuccessModal from "../../components/SuccessModal";
 import Auth from "../../Services/Auth";
 import Services from "../../Services/Service";
+import DetailsFirst from "../../components/DetailsFirst.js"
 
 export default function () {
   const [name, setname] = useState("");
@@ -93,7 +94,7 @@ export default function () {
   return (
     <div>
       <Navbar />
-      <div className="container">
+      {/* <div className="container">
         <h1
           id="text"
           style={{
@@ -175,6 +176,44 @@ export default function () {
               <b>Contact us</b>
             </button>
           </div>
+        </div>
+      </div> */}
+      <div class="container-fluid pt-3">
+        <div class="jumbotron" style={{ background: "#0B63B5" }}>
+          <div class="text-center">
+            <h1 style={{ color: "white", fontFamily: 'Lemonada', fontWeight: "800", fontSize: "48px", textTransform: "uppercase" }}>software development</h1>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid p-3">
+        <div class="row ">
+          <div class="col-md-6">
+            {/* <p> */}
+            <h2>First Part</h2>
+            <p>
+            Both versions convey a topic; it’s pretty easy to predict that 
+            the paragraph will be about epidemiological evidence, but only the second version establishes 
+            an argumentative point and puts it in context. The paragraph doesn’t just describe the epidemiological evidence; 
+            it shows how epidemiology is telling the same story as etiology. Similarly, 
+            while Version A doesn’t relate to anything in particular, Version B immediately suggests that 
+            the prior paragraph addresses the biological pathway (i.e. etiology) of a disease and that the 
+            new paragraph will bolster the emerging hypothesis with a different kind of evidence. As a reader, 
+            it’s easy to keep track of how the paragraph about cells and chemicals and such relates to the paragraph about 
+            populations in different places.<br></br></p>
+            {/* </p> */}
+            <h2>Second Part</h2>
+            <p>
+            Knowing this convention of academic writing can help you both read and write more effectively. When you’re reading a complicated academic piece for the first time, you might want to go through reading only the first sentence or two of each paragraph to get the overall outline of the argument. Then you can go back and read all of it with a clearer picture of how each of the details fit in. And when you’re writing, you may also find it useful to write the first sentence of each paragraph (instead of a topic-based outline) to map out a thorough argument before getting immersed in sentence-level wordsmithing.</p>
+          </div>
+              <div class="col-md-6">
+                <div class="text-center">
+              <img src={""} width='50%' height='50%' class="img-fluid" alt="" />
+              </div>
+            </div> 
+        </div>
+      </div>
+      <div class="container-fluid pt-3">
+        <div class="jumbotron" style={{ background: "#0B63B5" }}>
         </div>
       </div>
     </div>

@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import "../routes/HomePage/home.css";
+import { step,groth } from "./Images";
 export default function StepsPages() {
   return (
     <div style={{ backgroundColor: "#fff" }}>
-      <div
+      {/* <div
         className="container-fluid"
         style={{ marginTop: 50, marginBottom: 50 }}
       >
@@ -254,6 +255,38 @@ export default function StepsPages() {
               </p>
             </div>
           </div>
+        </div>
+      </div> */}
+      <div class='container pt-3'>
+        <div class='row'>
+          <div class='col-lg-12'>
+            <div class='section-header text-center' style={{fontWeight:"900", color:"steelblue"}}>
+              <h2>GROWTH YOUR BUSSINESS</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid p-3">
+        <div class="row ">
+          <div class="col-md-6">
+            {/* <p> */}
+            Both versions convey a topic; it’s pretty easy to predict that 
+            the paragraph will be about epidemiological evidence, but only the second version establishes 
+            an argumentative point and puts it in context. The paragraph doesn’t just describe the epidemiological evidence; 
+            it shows how epidemiology is telling the same story as etiology. Similarly, 
+            while Version A doesn’t relate to anything in particular, Version B immediately suggests that 
+            the prior paragraph addresses the biological pathway (i.e. etiology) of a disease and that the 
+            new paragraph will bolster the emerging hypothesis with a different kind of evidence. As a reader, 
+            it’s easy to keep track of how the paragraph about cells and chemicals and such relates to the paragraph about 
+            populations in different places.<br></br>
+            {/* </p> */}
+            Knowing this convention of academic writing can help you both read and write more effectively. When you’re reading a complicated academic piece for the first time, you might want to go through reading only the first sentence or two of each paragraph to get the overall outline of the argument. Then you can go back and read all of it with a clearer picture of how each of the details fit in. And when you’re writing, you may also find it useful to write the first sentence of each paragraph (instead of a topic-based outline) to map out a thorough argument before getting immersed in sentence-level wordsmithing.
+          </div>
+              <div class="col-md-6">
+                <div class="text-center">
+              <img src={groth} width='60%' height='100%' class="img-fluid" alt="" />
+              </div>
+            </div> 
         </div>
       </div>
     </div>

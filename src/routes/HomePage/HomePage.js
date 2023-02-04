@@ -11,6 +11,9 @@ import TCModal from "../../components/TCModal";
 import Auth from "../../Services/Auth";
 import Services from "../../Services/Service";
 import Portfolio from "../../components/Portfolio";
+import OurTechnology from "../../components/OurTechnology";
+import MenuItem from "../../components/MenuItem";
+import ImageModal from '../../components/HomePageImage'
 export default function HomePage() {
   const [isVisible, setisVisible] = useState(false);
   const [newVersion, setnewVersion] = useState("");
@@ -48,8 +51,9 @@ export default function HomePage() {
   return (
     <>
       <TCModal IsVisible={isVisible} accept={() => newVersionAccepted()} />
-      <Navbar />
-      <div id="bgImg">
+      {/* <Navbar /> */}
+      <ImageModal/>
+      {/* <div id="bgImg">
         <div className="container d-flex justify-content-center">
           <div
             id="carouselExampleControls"
@@ -250,11 +254,13 @@ export default function HomePage() {
             WHAT YOU NEED ?
           </button>
         </div>
-      </div>
+      </div> */}
+      <MenuItem/>
       <StepsPages />
       <WhatweDo />
       <DemoProjects />
       <Portfolio />
+      <OurTechnology/>
       <FooterScreen />
     </>
   );

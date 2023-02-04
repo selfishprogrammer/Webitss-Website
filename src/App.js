@@ -23,6 +23,7 @@ import ProfilePageCheck from "./routes/ProfilePage.js/ProfilePageCheck";
 import PrivacyPolicies from "./routes/TermsAndConditions/PrivacyPolicies";
 import TermsAndConditions from "./routes/TermsAndConditions/TermsAndConditions";
 import Auth from "./Services/Auth";
+import NewdetailsPage from "./routes/NewdetailsPage"
 
 export default function App() {
   const [userId, setuserId] = useState("");
@@ -59,6 +60,7 @@ export default function App() {
         <Route path="/details" element={<DetailsPage />} />
         <Route path="/tc" element={<TermsAndConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicies />} />
+        <Route path="/new-details" element={<NewdetailsPage/>}/>
       </Routes>
     );
   };

@@ -23,6 +23,21 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+/* .myCustomClass {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  background: linear-gradient(89.94deg, rgba(255, 0, 0, 0.39) 4.34%, rgba(0, 26, 159, 0.69) 51.08%, #00FED0 95%);
+} */
+.myCustomClass {
+  background: linear-gradient(89.94deg, rgba(255, 0, 0, 0.39) 4.34%, rgba(0, 26, 159, 0.69) 51.08%, #00FED0 95%);
+  font-size: 96px;
+  font-weight: 700;
+  font-style: normal;
+  color: #FFFFFF;
+}
 
 .App-link {
   color: #61dafb;

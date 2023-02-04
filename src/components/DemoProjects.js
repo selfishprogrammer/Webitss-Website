@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { base_url } from "../constants/Urls";
 import Services from "../Services/Service";
-import { Covido2, ecom3, erp, homiez, homiezWeb4, insta } from "./Images";
+import { fillup } from "./Images";
 
 export default function DemoProjects() {
   const [projects, setprojects] = useState([]);
@@ -20,44 +20,44 @@ export default function DemoProjects() {
     }
   };
   const navigate = useNavigate();
-  var settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 4,
-    initialSlide: 0,
+  // var settings = {
+  //   dots: true,
+  //   infinite: false,
+  //   speed: 500,
+  //   slidesToShow: 3,
+  //   slidesToScroll: 4,
+  //   initialSlide: 0,
 
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+  //   responsive: [
+  //     {
+  //       breakpoint: 1024,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 3,
+  //         infinite: true,
+  //         dots: true,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 600,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         slidesToScroll: 2,
+  //         initialSlide: 2,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 480,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //       },
+  //     },
+  //   ],
+  // };
   return (
     <div style={{ backgroundColor: "#fff" }}>
-      <div
+      {/* <div
         className="text-center"
         id="text"
         style={{
@@ -115,7 +115,46 @@ export default function DemoProjects() {
             </div>
           ))}
         </Slider>
+      </div> */}
+      <div class="container p-5">
+        <div class="row ">
+          <div class="col-md-6">
+            <div class="text-center">
+              <img src={fillup} width='100%' height='100%' class="img-fluid" alt="" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="container" style={{backgroundColor:"#d5d8dc6e", borderRadius:"5%"}}>
+              <div class="row justify-content-center pt-5">
+                <div class="col-6 text-center" style={{borderRadius:"10px", background:"linear-gradient(81.14deg, #410174 32.56%, #0FC5FF 100.02%)",color:"white",fontSize:"29px",fontWeight:"600",fontFamily:"serif"}}>
+                  LET'S DO IT
+                </div>
+              </div>
+              <form>
+                <div class="form-group pt-3">
+                  <label for="Name">Name</label>
+                  <input type="name" class="form-control" id="Name" placeholder="Name"/>
+                </div>
+                <div class="form-group">
+                  <label for="Email1">Email</label>
+                  <input type="email" class="form-control" id="Email1" placeholder="Email"/>
+                </div>
+                <div class="form-group">
+                  <label for="Phone">Phone Number</label>
+                  <input type="phone" class="form-control" id="Phone" placeholder="Phone Number"/>
+                </div>
+                <div class="form-group">
+                  <label for="Queries">Queries</label>
+                  <textarea type="queries" class="form-control" id="queries" placeholder="Write your Queries"/>
+                </div>
+                <div class='row justify-content-center align-items-center'>
+                <button type="submit" class="btn btn-primary mb-4" style={{width:"136px"}}>Submit</button>
+                </div>
+              </form>
+          </div>
+        </div>
       </div>
+    </div>
     </div>
   );
 }

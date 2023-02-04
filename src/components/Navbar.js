@@ -11,7 +11,7 @@ import { setLogin, setUserData } from "../Redux/user";
 import Auth from "../Services/Auth";
 import { useNavigate } from "react-router";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
-import { logo } from "./Images";
+import { newLogo } from "./Images";
 export default function Navbar() {
   const { isLogin } = useSelector((state) => state.user);
   console.log("isLogin", isLogin);
@@ -25,13 +25,14 @@ export default function Navbar() {
     Auth.setUserSecret(null);
     navigate("/login");
   };
+  
   return (
     <>
-      <div className="sticky-top">
+      {/* <div className="sticky-top">
         <nav className=" navbar navbar-expand-lg navbar-light bg-white shadow-sm">
           <Link className="navbar-brand d-flex align-middle" to="/">
             <img
-              src={logo}
+              src={newLogo}
               height="50"
               width="50"
               className="rounded-circle"
@@ -63,9 +64,6 @@ export default function Navbar() {
               IT SOLUTIONS
             </small>
           </Link>
-          {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button> */}
 
           <div className="nav-link ml-auto d-flex justify-content-between">
             <div className="nav-item ">
@@ -163,7 +161,35 @@ export default function Navbar() {
             )}
           </div>
         </nav>
-      </div>
+      </div> */}
+      <nav class="navbar navbar-expand-lg navbar-light" style={{background:"linear-gradient(270deg, #009277 26.63%, rgba(0, 178, 255, 0) 78.22%)"}}>
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src={newLogo} alt="..." height="46" /></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto ml-5">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">privacy policy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">contact us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">about us</a>
+              </li>
+              <li class="nav-item" style={{ color: "white", marginTop: "2px", fontSize: "25px" }}>
+              <a class="nav-link" href="/login"><AccountCircleOutlinedIcon /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </>
   );
 }
